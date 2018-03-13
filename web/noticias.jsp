@@ -16,7 +16,7 @@
 <html>       
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Principal - Instituto Martín Rivero</title>
+        <title>Noticias - Instituto Martín Rivero</title>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/cssNoticias/styleFonts.css">
         <link rel="stylesheet" type="text/css" href="css/cssNoticias/style.css">
@@ -50,7 +50,7 @@
 
             <nav>
                 <ul>
-                    <li><a href="#"><span class="icon-home3"></span>Inicio</a></li>
+                    <li><a href="principal.jsp"><span class="icon-home3"></span>Inicio</a></li>
                     <li><a href="#paginaNoticias"><span class="icon-newspaper"></span>Noticias</a></li>
                     <li class="submenu">
                         <a href="#">
@@ -67,10 +67,10 @@
                             <span class="icon-briefcase"></span>Departamentos<span class="caret icon-cheveron-down"></span>
                         </a>
                         <ul class="children">
-                            <li><a href="#paginaDepartamentos">Lingüistica</a></li>
-                            <li><a href="#paginaDepartamentos">Científico-Tecnologica</a></li>
-                            <li><a href="#paginaDepartamentos">Artística</a></li>
-                            <li><a href="#paginaDepartamentos">Familias Profesionales</a></li>
+                            <li><a href="departamentos.jsp">Lingüistica</a></li>
+                            <li><a href="departamentos.jsp">Científico-Tecnologica</a></li>
+                            <li><a href="departamentos.jsp">Artística</a></li>
+                            <li><a href="departamentos.jsp">Familias Profesionales</a></li>
                         </ul>
                     </li>
                     <li><a href="#"><span class="icon-envelop"></span>Contacto</a></li>
@@ -96,10 +96,6 @@
             </section>
 
             <aside>
-                <!--div id="buscador">
-                        <h4>Buscador</h4>
-                        <input type="text" name="search" placeholder="Busqueda..."/>
-                </div-->
                 <div id="categorias">
                     <h2>CATEGORÍA</h2>
                     <ul>

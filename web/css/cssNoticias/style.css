@@ -45,15 +45,16 @@ header > img{
 }
 
 header:before{
-	/*BANDA ROJA DE LA CABECERA*/
-	content: " ";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: darkred;
-	height: 8em;
-	z-index: -1;
+    /*BANDA ROJA DE LA CABECERA*/
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkred;
+    height: 8em;
+    z-index: -1;
+    border-bottom: 4px solid #560303;
 }
 
 header .container-banderas{
@@ -338,9 +339,10 @@ footer{
 }
 
 .footer-container {
-	width: 100%;
-	background: darkred;
-	color: #fff;
+    width: 100%;
+    background: darkred;
+    color: #fff;
+    border-top: 5px solid #560303;
 }
 .footer-container > p {
 	text-align: center;

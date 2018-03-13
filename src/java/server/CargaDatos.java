@@ -5,8 +5,8 @@
  */
 package server;
 
-import DAO.NoticiasJpaController;
-import DTO.Noticias;
+import DAO.*;
+import DTO.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -38,11 +38,19 @@ public class CargaDatos extends HttpServlet {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("IES_MARTINPU");
 
         NoticiasJpaController ctrlNoticias = new NoticiasJpaController(emf);
+        DepartamentosJpaController ctrlDepartamentos = new DepartamentosJpaController(emf);
+        AreaDptoJpaController ctrlAreaDpto = new AreaDptoJpaController(emf);
         int ultimaNoticia = ctrlNoticias.getNoticiasCount();
-        List<Noticias> listaNoticiasPrincipal = ctrlNoticias.findNoticiasEntities(4, ultimaNoticia-4);
+
+        List<Noticias> listaNoticiasPrincipal = ctrlNoticias.findNoticiasEntities(4, ultimaNoticia - 4);
         List<Noticias> listaNoticias = ctrlNoticias.findNoticiasEntities();
+        List<AreaDpto> listaAreaDpto = ctrlAreaDpto.findAreaDptoEntities();
+        List<Departamentos> listaDepartamentos = ctrlDepartamentos.findDepartamentosEntities();
+
         request.setAttribute("listaNoticiasPrincipal", listaNoticiasPrincipal);
         request.setAttribute("listaNoticias", listaNoticias);
+        request.setAttribute("listaAreaDpto", listaAreaDpto);
+        request.setAttribute("listaDepartamentos", listaDepartamentos);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

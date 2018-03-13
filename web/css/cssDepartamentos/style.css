@@ -1,0 +1,474 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;/*Incluimos el borde y el paddin en el tamaño de la caja*/	
+}
+
+body{
+    background: #ececd1;
+}
+
+/*----------------------CABECERA DE PAGINA----------------------*/
+header{
+    width: 100%;
+}
+
+header h1{
+    left: 35px;
+    top: 10px;
+    font-size: 3.6em;
+    color: #ffffff;
+    position: relative;
+    width: 70%;
+    text-shadow: 3px 2px 9px black;
+}
+header h3{
+    position: relative;
+    left: 535px;
+    top: 10px;
+    font-size: 1.2em;
+    width: 60%;
+    color: #ffffff;	
+}
+
+header > img{
+    width: 140px;
+    height: 170px;
+    position: relative;
+    float: left;
+    left: 25px;
+    background: #fff;
+    border: 4px solid darkred;
+    padding: 25px 5px;
+}
+
+header:before{
+    /*BANDA ROJA DE LA CABECERA*/
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkred;
+    height: 8em;
+    z-index: -1;
+    border-bottom: 4px solid #560303;
+}
+
+header .container-banderas{
+    float: right;
+    margin: 15px; 
+}
+
+header .container-banderas img{
+    width: 40px;
+    height: 25px;	
+    margin: 0px 5px;
+}
+
+header .container-botones{
+    text-align: center;
+    clear: both;
+}
+
+header button {
+    padding: 10px;
+    background-color: darkred;
+    border: 2px solid black;
+    border-radius: 5px;
+    min-width: 120px;
+    width: 12%;
+    margin: 0px 10px;
+    /*display: inline-flex;
+    margin: 15px auto;*/
+}
+header .container-botones button span{
+    margin-right: 10px;
+}
+header .container-botones a button  {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*----------------------MENU PRINCIPAL----------------------*/
+.menu_bar{
+    display: none;
+}
+
+.menu_bar span{
+    font-size: 48px;	
+}
+
+#cerrar{
+    display: none;
+    color: #FFF;
+}
+#bars{
+    color: darkred;
+}
+
+#menu-principal{
+    width: 100%;
+}
+#menu-principal nav{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color:#FFFFFF;
+    border-top: 2px solid darkred;
+    border-bottom: 2px solid darkred;
+    z-index: 1000;/*Para situarlo por encima del texto siemre*/
+}
+
+
+#menu-principal nav ul{
+    /*overflow: hidden;/*Para que el texto no se pongadetras del menu*/
+    list-style: none;
+    text-transform: uppercase;
+}
+#menu-principal nav ul li{
+    display: inline-block;
+    position: relative;
+    text-align: center;	
+    font-weight: bold;
+}
+#menu-principal nav ul li a{
+    display: block;
+    color: #000000;
+    padding: 20px;
+    text-decoration: none;
+}
+
+#menu-principal nav ul li .caret{
+    /*position: relative;
+    top: 3px;*/
+    margin-left: 10px;
+    margin-top: 0px;
+}
+#menu-principal nav ul li span{
+    margin-right: 10px; /*Margen a los iconos*/
+}
+
+#menu-principal nav ul li a:hover,#menu-principal nav ul li a:active{
+    background-color: #209035;
+}
+
+#menu-principal nav ul li .children {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+
+    background-color: #59C470;
+    width: 100%;/*Sobredimensionamos*/
+}
+
+#menu-principal nav ul li:hover .children {
+    display: block;
+}
+
+#menu-principal nav ul li .children li{
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+#menu-principal nav ul li .children li a{
+    display: block;
+    color: #000;
+    font-weight: normal;
+}
+
+
+.container-areaDpto {
+    display: flex;
+    flex-wrap: wrap;
+    margin:30px;
+
+}
+.container-areaDpto h2{
+    flex: 100%;
+    border-bottom: 2px solid lightgreen;
+    margin-bottom: 15px;
+}
+.container-areaDpto article {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid darkred;
+    -webkit-box-shadow: 1px 1px 10px darkgrey;
+    box-shadow: 1px 1px 10px darkgrey;
+    background-color: #fff;
+}
+
+.container-areaDpto article img {
+    width: 100%;	
+    border: 1px solid lightgrey;
+}
+
+.container-areaDpto article h3, .container-areaDpto article p {
+    margin: 12px 0px;
+    text-align: justify;
+}
+
+/*Estilos individuales por Areas de Departamentos*/
+.container-areaDpto:nth-child(2) h2{color: lightgreen;}
+.container-areaDpto:nth-child(2) article {border-color: lightgreen;}
+.container-areaDpto:nth-child(2) article h3{color: lightgreen;}
+
+
+.container-areaDpto:nth-child(3) h2{color: darkred; border-color: darkred}
+.container-areaDpto:nth-child(3) article {border-color: darkred;}
+.container-areaDpto:nth-child(3) article h3{color: darkred;}
+
+
+.container-areaDpto:nth-child(4) h2{color: darkseagreen; border-color: darkseagreen}
+.container-areaDpto:nth-child(4) article {border-color: darkseagreen;}
+.container-areaDpto:nth-child(4) article h3{color: darkseagreen;}
+
+.container-areaDpto:nth-child(5) h2{color: #3399ff; border-color: #3399ff;}
+.container-areaDpto:nth-child(5) article {border-color: #3399ff;}
+.container-areaDpto:nth-child(5) article h3{color: #3399ff;}
+
+.container-areaDpto:nth-child(6) h2{color: grey; border-color: grey;}
+.container-areaDpto:nth-child(6) article {border-color: grey;}
+.container-areaDpto:nth-child(6) article h3{color: grey;}
+
+section{
+    padding: 20px;
+    margin: 20px 0px;
+}
+
+/*----------------------FOOTER----------------------*/
+
+footer{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-container {
+    width: 100%;
+    background: darkred;
+    color: #fff;
+    border-top: 5px solid #560303;
+}
+.footer-container > p {
+    text-align: center;
+    padding: 15px;
+}
+.footer-main{
+    width: 98%;
+    max-width: 1000px;
+    margin: auto;
+    padding:50px 0;
+    display: flex;
+    flex-wrap: wrap;/* Si no cabe, pasa abajo*/
+}
+
+.footer-main .footer-columna{
+    width: calc(100%/3);
+    text-align: center;
+}
+
+
+.footer-main .footer-columna h3{
+    font-size: 32px;
+    color: lightgreen;
+    margin-bottom: 20px;
+}
+
+.footer-main .footer-columna p{
+    display: block;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.footer-main .footer-columna span{
+    margin-right: 15px;
+}
+
+.footer-main .footer-columna:nth-child(2) img{
+    width: 16em;
+    position: relative;
+    top: 75px;
+    margin: 15px;
+}
+
+
+.footer-main .footer-columna:nth-child(3) img{
+    width: 10em;
+    position: relative;
+    top: 30px;
+    margin: 15px;
+    background-color: white;
+    padding: 10px;
+    border: 3px solid #023402;
+}
+
+
+
+
+/**********************----------------------ESTILO PARA TABLET-------------**************/
+@media only screen
+and (max-width:1024px) 
+and (orientation: portrait){
+    /*----------------------MENU PRINCIPAL RESPONSIVE----------------------*/
+    body{
+        /*padding-top:70px; BAJA EL CONTENIDO PARA EL MENU*/
+    }
+
+    header:before{
+        height: 4em;
+    }
+
+    #menu-principal{
+        height: 55px;/*Para posicionamiento de botones e introducion*/
+    }
+    header h1{
+        color: #000000;
+        top: 80px;
+        font-size: 2.7em;
+    } 
+    header h3{
+        color: #000000;
+        position: relative;
+        left: 180px;
+        top: 80px;		
+    }
+
+    header .container-botones{
+        text-align: center;
+        clear: both;
+        position: relative;
+        top: 32px;
+
+    }
+
+    .menu_bar{
+        display: block;
+        position: relative;
+        top: -150px;
+        z-index: 100;/*PARA QUE PASE POR ENCIMA DEL SLIDE*/
+        /*width: 100%;*/
+        /*background-color: #DD8B8B;*/
+        /* position: fixed; */
+        /* top: 0; */
+    }
+    .menu_bar .boton_menu{
+        display: block;
+        color: #FFF;
+        overflow: hidden;
+        padding: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .menu_bar span{
+        float: right;
+    }
+
+    #menu-principal nav{
+        background-color: #1b6229;
+        width: 75%;;
+        position: fixed;
+        top: 90px;
+        right: 100%;
+        margin: 0;
+        overflow: auto;
+        border: none;
+    }
+
+    #menu-principal nav ul li{
+        display: block;
+        float: none;
+        border-bottom: 1px solid rgba(255,255,255,0.3);		
+        text-align: justify;
+    }
+    #menu-principal nav ul li a{
+        color: #ffffff;
+    }
+
+    #menu-principal nav ul li .children{
+        width: 100%;
+        position: relative;/*Para que no se superpongan a los li padres*/
+
+        background-color: #BEE0BE;
+    }
+
+    #menu-principal nav ul li:hover .children{
+        display: none;/*Ocultamos, porque los mostraremos con jQuery*/
+    }
+
+    #menu-principal nav ul li .caret {
+        float: right;
+    }
+}
+
+
+
+/**********************----------------------ESTILO PARA MOVIL-------------**************/
+@media only screen
+and (min-width:360px)
+and (max-width:480px) 
+and (orientation: portrait){
+
+    /*Titulos*/
+    body header > h1{
+        display: none;
+    }
+    body header > h3{/*Con body delante para que tenga mas especificidad*/
+        position: relative;
+        color: white;
+        top: 30px;
+        left: 40px;
+        color: #ffffff;
+        font-size: 1.3em;
+        width: auto; 
+    }
+
+    /*Reposicionamiento de las banderas*/
+    .container-banderas{
+        position: absolute;
+        top: 85px;
+        right: 90px;
+    }
+    
+    .container-areaDpto{
+        margin: 35px 12px;
+    }
+    
+    .container-areaDpto article{
+        width: 100%;
+        /*margin: 5px 0px;	*/
+        flex-direction: column;
+        flex-basis: auto;
+    }
+
+    /*********-----------------FOOTER MOVIL--------------***************/
+    .footer-main {
+        padding: 10px 0;
+    }
+
+    .footer-main .footer-columna{
+        text-align: center;
+        width: 100%;
+        margin:10px 0;
+    }
+
+    .footer-main .footer-columna h3{
+        margin-bottom: 5px;
+    }
+
+    .footer-main .footer-columna:nth-child(2) img{
+        top: 0px;
+    }
+
+    .footer-main .footer-columna:nth-child(3) img{
+        top: 0px;
+        width: 7em;
+    }
+
+}

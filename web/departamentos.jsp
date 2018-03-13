@@ -16,11 +16,10 @@
 <html>       
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Principal - Instituto Martín Rivero</title>
+        <title>Departamentos - Instituto Martín Rivero</title>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/cssPrincipal/styleFonts.css">
-        <link rel="stylesheet" type="text/css" href="css/cssPrincipal/style.css">
-        <link rel="stylesheet" type="text/css" href="css/cssSlider/styleSlider.css">
+        <link rel="stylesheet" type="text/css" href="css/cssDepartamentos/styleFonts.css">
+        <link rel="stylesheet" type="text/css" href="css/cssDepartamentos/style.css">
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/jquery.slides.min.js"></script>
@@ -42,8 +41,6 @@
                 <a href="#"><button><span class="icon-search"></span>Busqueda</button></a>
             </div>
         </header>
-
-
 
         <div id="menu-principal">
             <div class="menu_bar">
@@ -81,47 +78,27 @@
             </nav>		
         </div>
 
-        <div id="bienvenida">
-            <p class="welcome-short">Bienvenidos al sitio web del Instituto Martín Rivero</p>
-            <p class="welcome-large">Bienvenidos al sitio web del Instituto Martín Rivero,
-                uno de los centros educativos con más reconocimiento de Ronda.
-                Ofrecemos una amplia oferta educativa de educación secundaria,
-                bachillerato y formación profesional.</p>
-        </div>
 
-        <div class="container-slider">
-            <div id="slides">
-                <img src="images/slider/example-slide-2.jpg" alt="Enlace a nuestro Blog de Noticias">
-                <img src="images/news/daw_entrega_banda.jpg" alt="Visite nuestro apartado de Estudios">
-                <img src="images/slider/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
-                <img src="images/news/entrevista_marcos2.jpg" alt="Bienvenido a la página web del Instituto Martín Rivero">
-                <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
-                <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
-            </div>
-        </div>
-
-
-
-        <section id="noticias">
-            <h1>ÚLTIMAS NOTICIAS</h1>
-            <c:forEach items="${listaNoticiasPrincipal}" var="noticia">
-                <article>
-                <img src="images/news/${noticia.imagen}">
-                <h3>${noticia.titular}</h3>
-                <p>${noticia.subtitulo}</p>
-                <a href="#">Leer más...</a>			
-            </article>
+        <section id="departamentos">
+            <h1>DEPARTAMENTOS</h1>
+            <c:forEach items="${listaAreaDpto}" var="areaDpto">
+                <div class="container-areaDpto" >
+                <h2>${areaDpto.nombre}</h2>               
+                
+                <c:forEach items="${listaDepartamentos}" var="departamento">
+                    
+                    <c:if test="${departamento.codigoArea.codigo == areaDpto.codigo}">
+                       <article>
+                        <h3>${departamento.nombre}</h3>                        
+                        <img src="images/departamentos/Lengua.png">
+                        <p>${departamento.descripcion}</p>			
+                    </article>
+                    </c:if>
+                </c:forEach>
+                    </div>
             </c:forEach>
         </section>
 
-        <section id="newsletter"> 
-            <h1>NEWSLETTER</h1>
-            <p>¡Sucríbete a nuestro boletín!</p>
-            <p>Te enviaremos un email cada vez que publiquemos una noticia nueva.</p>
-            <form action="altaNewsletter">
-                <input type="email" placeholder="Dirección de E-mail"/><span class="icon-paper-plane-o"></span><input type="submit" value="Enviar"/>		
-            </form>
-        </section>    
 
         <footer>
             <div class="footer-container">
@@ -144,22 +121,4 @@
             </div>
         </footer>
     </body>
-
-
-    <script>
-        $(function () {
-            $('#slides').slidesjs({
-                width: 640,
-                height: 370,
-                navigation: true,
-                play: {
-                    interval: 8000,
-                    auto: true,
-                    pauseOnHover: true,
-                    restartDelay: 3000
-                }
-            });
-        });
-    </script>
-
 </html>
