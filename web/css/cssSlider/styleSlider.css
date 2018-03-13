@@ -1,0 +1,108 @@
+ #slides {
+  display: none;
+  margin-bottom:50px;
+}
+
+.slidesjs-container{
+  border: 2px solid #000;
+} 
+.slidesjs-navigation {
+  margin-top:3px;
+  color: #333333;
+  text-decoration: none;
+}
+.slidesjs-navigation:hover{
+  color: #97201c;
+}
+
+.slidesjs-previous {
+  margin-right: 5px;
+  float: left;
+}
+
+.slidesjs-next {
+  margin-right: 5px;
+  float: left;
+}
+
+.slidesjs-pagination {
+  margin: 6px 0 0;
+  float: right;
+  list-style: none;
+}
+
+.slidesjs-pagination li {
+  float: left;
+  margin: 0 1px;
+}
+
+.slidesjs-pagination li a {
+  display: block;
+  width: 13px;
+  height: 0;
+  padding-top: 13px;
+  background-image: url(img/pagination.png);
+  background-position: 0 0;
+  float: left;
+  overflow: hidden;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+  background-position: 0 -13px
+}
+
+.slidesjs-pagination li a:hover {
+  background-position: 0 -26px
+}
+
+.slidesjs-pagination a:link, .slidesjs-pagination a:visited {
+  color: #333
+}
+
+.slidesjs-pagination a:hover,.slidesjs-pagination a:active {
+  color: #9e2020
+}
+
+.navbar {
+  overflow: hidden
+}
+
+#slides {
+  display: none
+}
+
+.container-slider {
+  margin: 0 auto
+}
+
+/* MEDIA QUERIES PARA MOVILES Y TABLETS*/
+@media (max-width: 767px) {
+
+  .container-slider {
+    width: auto
+  }
+}
+
+/* PARA MOVIL */
+@media (max-width: 480px) {
+  .container-slider {
+    width: auto;
+    /*display: none;*/
+  }
+}
+
+/* Para TABLETS y Portátiles Pequeños */
+@media (min-width: 768px) and (max-width: 979px) {
+  .container-slider {
+    width: 724px
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px
+  }
+}
+
+  

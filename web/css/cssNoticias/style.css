@@ -1,0 +1,567 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;/*Incluimos el borde y el paddin en el tamaño de la caja*/	
+}
+body{
+	background: #ececd1;
+}
+
+
+/*----------------------CABECERA DE PAGINA----------------------*/
+header{
+	width: 100%;
+}
+
+header h1{
+	left: 35px;
+	top: 10px;
+	font-size: 3.6em;
+	color: #ffffff;
+	position: relative;
+	width: 70%;
+	text-shadow: 3px 2px 9px black;
+}
+header h3{
+	position: relative;
+	left: 535px;
+	top: 10px;
+	font-size: 1.2em;
+	width: 60%;
+	color: #ffffff;	
+}
+
+header > img{
+	width: 140px;
+	height: 170px;
+	position: relative;
+	float: left;
+	left: 25px;
+	background: #fff;
+	border: 4px solid darkred;
+	padding: 25px 5px;
+}
+
+header:before{
+	/*BANDA ROJA DE LA CABECERA*/
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: darkred;
+	height: 8em;
+	z-index: -1;
+}
+
+header .container-banderas{
+	float: right;
+	margin: 15px; 
+}
+
+header .container-banderas img{
+	width: 40px;
+	height: 25px;	
+	margin: 0px 5px;
+}
+
+header .container-botones{
+	text-align: center;
+	clear: both;
+}
+
+header button {
+	padding: 10px;
+	background-color: darkred;
+	border: 2px solid black;
+	border-radius: 5px;
+	min-width: 120px;
+	width: 12%;
+	margin: 0px 10px;
+	/*display: inline-flex;
+	margin: 15px auto;*/
+}
+header .container-botones button span{
+	margin-right: 10px;
+}
+header .container-botones a button  {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/*----------------------MENU PRINCIPAL----------------------*/
+.menu_bar{
+	display: none;
+}
+
+.menu_bar span{
+	font-size: 48px;	
+}
+
+#cerrar{
+	display: none;
+	color: #FFF;
+}
+#bars{
+	color: darkred;
+}
+
+#menu-principal{
+	width: 100%;
+}
+#menu-principal nav{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	background-color:#FFFFFF;
+	border-top: 2px solid darkred;
+	border-bottom: 2px solid darkred;
+	z-index: 1000;/*Para situarlo por encima del texto siemre*/
+}
+
+#menu-principal nav ul{
+	/*overflow: hidden;/*Para que el texto no se pongadetras del menu*/
+	list-style: none;
+	text-transform: uppercase;
+}
+
+#menu-principal nav ul li{
+	display: inline-block;
+	position: relative;
+	text-align: center;	
+	font-weight: bold;
+}
+#menu-principal nav ul li a{
+	display: block;
+	color: #000000;
+	padding: 20px;
+	text-decoration: none;	
+}
+
+#menu-principal nav ul li .caret{
+	/*position: relative;
+	top: 3px;*/
+	margin-left: 10px;
+	margin-top: 0px;
+}
+#menu-principal nav ul li span{
+	margin-right: 10px; /*Margen a los iconos*/
+}
+
+#menu-principal nav ul li a:hover,#menu-principal nav ul li a:active{
+	background-color: #209035;
+}
+
+#menu-principal nav ul li .children {
+	display: none;
+	position: absolute;
+	z-index: 1000;
+
+	background-color: #59C470;
+	width: 100%;
+}
+
+#menu-principal nav ul li:hover .children {
+	display: block;
+}
+
+#menu-principal nav ul li .children li{
+	display: block;
+	overflow: hidden;
+	border-bottom: 1px solid #E7E7E7;
+}
+
+#menu-principal nav ul li .children li a{
+	display: block;
+	color: #000;
+	font-weight: normal;
+}
+
+
+/***********-----------CONTENEDOR CENTRAL--------------******/
+#main-container{
+	max-width: 1400px;
+	position: relative;
+	margin: 25px auto;
+	display: flex;
+	flex-wrap: nowrap;/*Para que se mantengan el main y el aside paralelos*/
+	flex-direction: row;
+}
+
+#noticias {
+	display: flex;
+	flex-wrap: wrap;
+	/*flex: 60%;*/
+	margin: 20px;
+}
+
+aside{
+	display: flex;
+	flex-direction: column;
+	flex: 15%;
+	position: relative;
+	top: 30px;
+	padding: 15px;
+}
+
+
+/***********-----------SECCION NOTICIAS--------------******/
+
+#noticias h1{
+	flex: 100%;
+	border-bottom: 2px solid lightgreen;
+	margin-bottom: 15px;
+}
+
+#noticias h3{
+	flex: 100%;
+	margin-bottom: 10px;
+}
+#noticias article {
+	flex:calc(100%/3);
+	margin: 10px;
+	padding: 20px;
+	border: 2px solid darkred;
+	background-color: #fff;
+	-webkit-box-shadow: 1px 1px 10px darkgrey;
+	box-shadow: 1px 1px 10px darkgrey;		
+}
+
+#noticias article img {
+	width: 100%;
+	border: 1px solid lightgrey;
+}
+
+#noticias article h3{
+	font-size: 1.6em;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 30px;
+}
+
+ #noticias article p {
+	margin: 15px 5px;
+	text-align: justify;
+}
+
+#noticias article span{
+	color: grey;
+	font-size: 1em;
+	float: left;
+}
+
+#noticias article a{
+	float: right;
+}
+
+#noticias article a:hover{
+	color: blue;
+}
+
+
+/****-----------------------ASIDE----------************/
+
+aside div{
+	margin: 25px 10px;
+}
+
+aside div h2{
+	border-bottom: 2px solid lightgreen;
+	margin: 10px  0px;
+}
+aside div ul{
+	list-style: none;
+}
+
+/***************----------------------------NEWSLETTER-------------------------------*******/
+
+#newsletter form {
+	margin: 15px auto;
+	/*width: 350px;*/
+	position: relative;
+}
+#newsletter input[type=email] {
+	border: 2px solid lightgreen;
+	border-radius: 30px;
+	height: 46px;
+	padding: 0 22px;
+	margin: 0px auto;
+	display: block;
+	width: 275px;
+}
+
+#newsletter input[type=submit] {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	background-color: #fefe37;
+	color: #fefe37;
+	border: none;
+	text-align: center;
+	position: absolute;
+	right: 6px;
+	top: 0px;
+}
+
+#newsletter input[type=email]:focus {
+	background-color: #CCE8DF;
+	outline:0px; /*Elimina el borde por defecto cuando tiene el focus*/
+}
+
+#newsletter input[type=submit]:hover {
+	background-color: orange;
+	color: orange;
+	cursor: pointer;
+}
+
+#newsletter span {
+	position: absolute;
+	right: 22px;
+	top: 15px;
+	z-index: 1;
+	font-size: 19px;	
+}
+
+#newsletter span:hover {
+	cursor: pointer;
+}
+
+/*----------------------FOOTER----------------------*/
+
+footer{
+	clear: both;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.footer-container {
+	width: 100%;
+	background: darkred;
+	color: #fff;
+}
+.footer-container > p {
+	text-align: center;
+	padding: 15px;
+}
+.footer-main{
+	width: 98%;
+	max-width: 1000px;
+	margin: auto;
+	padding:50px 0;
+	display: flex;
+	flex-wrap: wrap;/* Si no cabe, pasa abajo*/
+}
+
+.footer-main .footer-columna{
+	width: calc(100%/3);
+	text-align: center;
+}
+
+
+.footer-main .footer-columna h3{
+	font-size: 32px;
+	color: lightgreen;
+	margin-bottom: 20px;
+}
+
+.footer-main .footer-columna p{
+	display: block;
+	margin-bottom: 15px;
+	text-align: justify;
+}
+
+.footer-main .footer-columna span{
+	margin-right: 15px;
+}
+
+.footer-main .footer-columna:nth-child(2) img{
+	width: 16em;
+	position: relative;
+	top: 75px;
+	margin: 15px;
+}
+
+
+.footer-main .footer-columna:nth-child(3) img{
+	width: 10em;
+	position: relative;
+	top: 30px;
+	margin: 15px;
+	background-color: white;
+	padding: 10px;
+	border: 3px solid #023402;
+}
+
+
+/*Hacemos que se cambie para cualquier dispositivo, no solo tablets y moviles
+en iPad Pro se seguiría viendo en row, ya que tiene suficiente anchura de pantalla*/
+@media (max-width:800px) {
+	#main-container {
+		flex-direction: column;
+		/*Cambiamos la direccion del flex para adaptarlo a la pantalla*/
+	}
+}
+/**********************----------------------ESTILO PARA TABLET-------------**************/
+@media only screen
+and (max-width:1024px) 
+and (orientation: portrait){
+	/*----------------------MENU PRINCIPAL RESPONSIVE----------------------*/
+	body{
+		/*padding-top:70px; BAJA EL CONTENIDO PARA EL MENU*/
+	}
+
+	header:before{
+		height: 4em;
+	}
+
+	#menu-principal{
+		height: 55px;/*Para posicionamiento de botones e introducion*/
+	}
+	header h1{
+		color: #000000;
+		top: 80px;
+		font-size: 2.7em;
+	} 
+	header h3{
+		color: #000000;
+		position: relative;
+		left: 180px;
+		top: 80px;		
+	}
+
+	header .container-botones{
+		text-align: center;
+		clear: both;
+		position: relative;
+		top: 32px;
+
+	}
+
+	.menu_bar{
+		display: block;
+		position: relative;
+		top: -150px;
+		z-index: 100;/*PARA QUE PASE POR ENCIMA DEL SLIDE*/
+		/*width: 100%;*/
+		/*background-color: #DD8B8B;*/
+		/* position: fixed; */
+		/* top: 0; */
+	}
+	.menu_bar .boton_menu{
+		display: block;
+		color: #FFF;
+		overflow: hidden;
+		padding: 25px;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 40px;
+	}
+	.menu_bar span{
+		float: right;
+	}
+
+	#menu-principal nav{
+		background-color: #1b6229;
+		width: 75%;;
+		position: fixed;
+		top: 90px;
+		right: 100%;
+		margin: 0;
+		overflow: auto;
+		border: none;
+	}
+
+	#menu-principal nav ul li{
+		display: block;
+		float: none;
+		border-bottom: 1px solid rgba(255,255,255,0.3);		
+		text-align: justify;
+	}
+	#menu-principal nav ul li a{
+		color: #ffffff;
+	}
+
+	#menu-principal nav ul li .children{
+		width: 100%;
+		position: relative;/*Para que no se superpongan a los li padres*/
+		
+		background-color: #BEE0BE;
+	}
+
+	#menu-principal nav ul li:hover .children{
+		display: none;/*Ocultamos, porque los mostraremos con jQuery*/
+	}
+
+	#menu-principal nav ul li .caret {
+		float: right;
+	}
+
+}
+
+
+
+/**********************----------------------ESTILO PARA MOVIL-------------**************/
+@media only screen
+and (min-width:360px)
+and (max-width:480px) 
+and (orientation: portrait){
+
+	/*Titulos*/
+	body header > h1{
+		display: none;
+	}
+	body header > h3{/*Con body delante para que tenga mas especificidad*/
+		position: relative;
+		color: white;
+		top: 30px;
+		left: 40px;
+		color: #ffffff;
+		font-size: 1.3em;
+		width: auto; 
+	}
+
+	/*Reposicionamiento de las banderas*/
+	.container-banderas{
+		position: absolute;
+		top: 85px;
+		right: 75px;
+	}
+
+	#noticias article{
+		width: 100%;
+		margin: 5px 0px;	
+		flex-direction: column;
+		flex-basis: auto;
+	}
+	section {
+		padding: 0;
+	}
+
+	/*********-----------------FOOTER MOVIL--------------***************/
+	.footer-main {
+		padding: 10px 0;
+	}
+
+	.footer-main .footer-columna{
+		text-align: center;
+		width: 100%;
+		margin:10px 0;
+	}
+
+	.footer-main .footer-columna h3{
+		margin-bottom: 5px;
+	}
+
+	.footer-main .footer-columna:nth-child(2) img{
+		top: 0px;
+	}
+
+	.footer-main .footer-columna:nth-child(3) img{
+		top: 0px;
+		width: 7em;
+	}
+
+}
