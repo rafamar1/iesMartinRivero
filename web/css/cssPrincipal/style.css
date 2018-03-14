@@ -18,18 +18,20 @@ header{
 header h1{
     left: 35px;
     top: 10px;
-    font-size: 3.6em;
+    font-size: 5vw;
     color: #ffffff;
     position: relative;
-    width: 75%;
+    width: 70%;
+    text-shadow: 3px 2px 9px black;
 }
 header h3{
     position: relative;
-    left: 535px;
-    top: 10px;
-    font-size: 1.2em;
-    width:52%;
-    color: #ffffff;	
+    left: 37%;
+    top: 15px;
+    font-size: 2.3vw;
+    width: 45%;
+    color: #ffffff;    
+    text-shadow: 2px 1px 9px black;	
 }
 
 header > img{
