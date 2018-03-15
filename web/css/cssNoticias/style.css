@@ -9,7 +9,6 @@ body{
     background: #ececd1;
 }
 
-
 /*----------------------CABECERA DE PAGINA----------------------*/
 header{
     width: 100%;
@@ -24,17 +23,19 @@ header h1{
     width: 70%;
     text-shadow: 3px 2px 9px black;
 }
+
 header h3{
     position: relative;
     left: 37%;
-    top: 15px;
+    top: 8px;
     font-size: 2.3vw;
-    width: 45%;
-    color: #ffffff;    
-    text-shadow: 2px 1px 9px black;	
+    width: 60%;    
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 2px 1px 9px black;
 }
 
-header > img{
+header a img{
     width: 140px;
     height: 170px;
     position: relative;
@@ -52,7 +53,6 @@ header:before{
     top: 0;
     left: 0;
     width: 100%;
-    /*background-color: darkred;*/
     background: linear-gradient(0deg,#760000,#470000);
     height: 8em;
     z-index: -1;
@@ -70,22 +70,33 @@ header .container-banderas img{
     margin: 0px 5px;
 }
 
+header .container-banderas img:hover{
+    transform: scale(1.15);
+    transition-property: transform;
+    transition-duration: 0.2s;
+    box-shadow: 1px 1px 8px #000;
+}
+
 header .container-botones{
     text-align: center;
     clear: both;
 }
 
-header button {
+header .container-botones button {
     padding: 10px;
-    background-color: darkred;
+    background: darkred;
     border: 2px solid black;
     border-radius: 5px;
     min-width: 120px;
     width: 12%;
     margin: 0px 10px;
-    /*display: inline-flex;
-    margin: 15px auto;*/
 }
+
+header .container-botones a:hover button {
+    background: linear-gradient(180deg,#790000,#3e0000);
+    border: 2px solid #8f0000;
+}
+
 header .container-botones button span{
     margin-right: 10px;
 }
@@ -114,8 +125,10 @@ header .container-botones a button  {
 }
 
 #menu-principal{
-    width: 100%;
+    width: 100%;    
+    font-family: 'Quicksand', sans-serif;
 }
+
 #menu-principal nav{
     width: 90%;
     max-width: 1000px;
@@ -142,7 +155,7 @@ header .container-botones a button  {
     display: block;
     color: #000000;
     padding: 20px;
-    text-decoration: none;	
+    text-decoration: none;
 }
 
 #menu-principal nav ul li .caret{
@@ -156,14 +169,14 @@ header .container-botones a button  {
 }
 
 #menu-principal nav ul li a:hover,#menu-principal nav ul li a:active{
-    background-color: #209035;
+    background: #71eb71;    
+    color:#000;
 }
 
 #menu-principal nav ul li .children {
     display: none;
     position: absolute;
     z-index: 1000;
-
     background-color: #59C470;
     width: 100%;
 }
@@ -183,7 +196,6 @@ header .container-botones a button  {
     color: #000;
     font-weight: normal;
 }
-
 
 /***********-----------CONTENEDOR CENTRAL--------------******/
 #main-container{
@@ -216,22 +228,34 @@ aside{
 
 #noticias h1{
     flex: 100%;
-    border-bottom: 2px solid lightgreen;
+    border-bottom: 2px solid #5e0000;
     margin-bottom: 15px;
+    font-size: 2.5em;
+    color: #5e0000;
+    text-shadow: 0px 0px 1px #320101;
 }
 
-#noticias h3{
+#noticias > h3{
     flex: 100%;
     margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    color: #666666;
 }
 #noticias article {
-    flex:calc(100%/3);
+    flex: calc(100%/3);
     margin: 10px;
     padding: 20px;
     border: 2px solid darkred;
-    background: linear-gradient(180deg,white,#efefef);
-    -webkit-box-shadow: 1px 1px 10px darkgrey;
-    box-shadow: 1px 1px 10px darkgrey;		
+    background: #fff;
+    box-shadow: 1px 1px 10px darkgrey;
+    font-family: 'Abel', sans-serif;		
+}
+#noticias article:hover{
+    background: linear-gradient(180deg,#f3f3f3,#d9d9d9);
+    transform: scale(1.02);
+    transition-property: transform;
+    transition-duration: 0.55s;
+    box-shadow: 3px 5px 15px #000;
 }
 
 #noticias article img {
@@ -245,23 +269,45 @@ aside{
     margin-bottom: 30px;
 }
 
-#noticias article p {
+#noticias article  p{
+    margin: 15px 0px;
+}
+
+#noticias article .subtitulo + p {
     margin: 15px 5px;
     text-align: justify;
+    font-family: 'Arial';
+    font-size: 0.9em;
 }
 
 #noticias article span{
-    color: grey;
+    color: #480000;
     font-size: 1em;
     float: left;
+}
+#noticias article span.icon-calendar{
+    margin-right: 5px;
+}
+#noticias .subtitulo{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #5b0101;
 }
 
 #noticias article a{
     float: right;
+    text-decoration: none;
+    color: grey;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
 }
 
 #noticias article a:hover{
-    color: blue;
+    color: blue;    
+    text-decoration: underline;
+    transform: scale(1.07);
+    transition-property: transform;
+    transition-duration: 0.1s;
 }
 
 
@@ -272,14 +318,24 @@ aside div{
 }
 
 aside div h2{
-    border-bottom: 2px solid lightgreen;
-    margin: 10px  0px;
+    /*border-bottom: 2px solid lightgreen;
+    /* margin: 10px 0px; */
+    border-bottom: 2px solid #5e0000;
+    margin-bottom: 15px;
+    color: #5e0000;
+    text-shadow: 0px 0px 1px #320101;
+    font-family: 'Abel', sans-serif;
 }
 aside div ul{
     list-style: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9em;
 }
 
 /***************----------------------------NEWSLETTER-------------------------------*******/
+#newsletter p{
+    font-family: 'Abel', sans-serif;
+} 
 
 #newsletter form {
     margin: 15px auto;
@@ -429,12 +485,14 @@ and (orientation: portrait){
         color: #000000;
         top: 80px;
         font-size: 2.7em;
+        text-shadow: 1px 1px 9px #000000a6;
     } 
     header h3{
         color: #000000;
         position: relative;
         left: 180px;
-        top: 80px;		
+        top: 80px;
+        text-shadow: 1px 1px 9px #000000a6;
     }
 
     header .container-botones{
@@ -479,13 +537,23 @@ and (orientation: portrait){
         border: none;
     }
 
-    #menu-principal nav ul li{
+    #menu-principal nav > ul > li{
         display: block;
         float: none;
-        border-bottom: 1px solid rgba(255,255,255,0.3);		
+        border-bottom: 1px solid rgba(255,255,255,0.5);		
         text-align: justify;
+        background: linear-gradient(0deg,#660000,#2c0000);
     }
-    #menu-principal nav ul li a{
+
+    #menu-principal nav > ul li:first-child{
+        border-top: 1px solid rgba(255,255,255,0.5);
+    }
+
+    #menu-principal nav > ul li:last-child{
+        border-bottom: none;
+    }
+
+    #menu-principal nav > ul > li a{
         color: #ffffff;
     }
 
@@ -493,7 +561,10 @@ and (orientation: portrait){
         width: 100%;
         position: relative;/*Para que no se superpongan a los li padres*/
 
-        background-color: #BEE0BE;
+    }
+
+    #menu-principal nav ul li .children li{
+        background: linear-gradient(0deg,#a45555,#9b2929);
     }
 
     #menu-principal nav ul li:hover .children{
@@ -541,6 +612,12 @@ and (orientation: portrait){
         flex-direction: column;
         flex-basis: auto;
     }
+
+    #noticias article:nth-child(odd){
+        background: linear-gradient(180deg,#f5fcf2,#eaffea);
+        border: 1px solid lightgreen;
+    }
+
     section {
         padding: 0;
     }

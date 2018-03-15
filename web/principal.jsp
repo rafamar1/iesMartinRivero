@@ -21,6 +21,7 @@
         <link rel="stylesheet" type="text/css" href="css/cssPrincipal/styleFonts.css">
         <link rel="stylesheet" type="text/css" href="css/cssPrincipal/style.css">
         <link rel="stylesheet" type="text/css" href="css/cssSlider/styleSlider.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel|Mina|Quicksand" rel="stylesheet">
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/jquery.slides.min.js"></script>
@@ -30,7 +31,7 @@
     <body>
 
         <header>
-            <img src="css/imagenes/logoMartin.gif"/>
+            <a href="principal.jsp"><img src="css/imagenes/logoMartin.gif"/></a>
             <div class="container-banderas">
                 <img src="css/imagenes/spain_flag.jpg"/>
                 <img src="css/imagenes/british_flag.jpg"/>
@@ -106,11 +107,11 @@
             <h1>ÚLTIMAS NOTICIAS</h1>
             <c:forEach items="${listaNoticiasPrincipal}" var="noticia">
                 <article>
-                <img src="images/news/${noticia.imagen}">
-                <h3>${noticia.titular}</h3>
-                <p>${noticia.subtitulo}</p>
-                <a href="#">Leer más...</a>			
-            </article>
+                    <img src="images/news/${noticia.imagen}">
+                    <h3>${noticia.titular}</h3>
+                    <p>${noticia.subtitulo}</p>
+                    <a href="noticias.jsp">Leer más...</a>			
+                </article>
             </c:forEach>
         </section>
 

@@ -5,7 +5,6 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;/*Incluimos el borde y el paddin en el tamaño de la caja*/	
 }
-
 body{
     background: #ececd1;
 }
@@ -22,19 +21,21 @@ header h1{
     color: #ffffff;
     position: relative;
     width: 70%;
-    text-shadow: 2px 1px 9px black;
+    text-shadow: 3px 2px 9px black;
 }
+
 header h3{
     position: relative;
     left: 37%;
-    top: 15px;
+    top: 8px;
     font-size: 2.3vw;
-    width: 45%;
-    color: #ffffff;    
+    width: 60%;    
+    letter-spacing: 1px;
+    color: #ffffff;
     text-shadow: 2px 1px 9px black;
 }
 
-header > img{
+header a img{
     width: 140px;
     height: 170px;
     position: relative;
@@ -52,7 +53,6 @@ header:before{
     top: 0;
     left: 0;
     width: 100%;
-    /*background-color: darkred;*/
     background: linear-gradient(0deg,#760000,#470000);
     height: 8em;
     z-index: -1;
@@ -70,22 +70,33 @@ header .container-banderas img{
     margin: 0px 5px;
 }
 
+header .container-banderas img:hover{
+    transform: scale(1.15);
+    transition-property: transform;
+    transition-duration: 0.2s;
+    box-shadow: 1px 1px 8px #000;
+}
+
 header .container-botones{
     text-align: center;
     clear: both;
 }
 
-header button {
+header .container-botones button {
     padding: 10px;
-    background-color: darkred;
+    background: darkred;
     border: 2px solid black;
     border-radius: 5px;
     min-width: 120px;
     width: 12%;
     margin: 0px 10px;
-    /*display: inline-flex;
-    margin: 15px auto;*/
 }
+
+header .container-botones a:hover button {
+    background: linear-gradient(180deg,#790000,#3e0000);
+    border: 2px solid #8f0000;
+}
+
 header .container-botones button span{
     margin-right: 10px;
 }
@@ -114,8 +125,10 @@ header .container-botones a button  {
 }
 
 #menu-principal{
-    width: 100%;
+    width: 100%;    
+    font-family: 'Quicksand', sans-serif;
 }
+
 #menu-principal nav{
     width: 90%;
     max-width: 1000px;
@@ -126,12 +139,12 @@ header .container-botones a button  {
     z-index: 1000;/*Para situarlo por encima del texto siemre*/
 }
 
-
 #menu-principal nav ul{
     /*overflow: hidden;/*Para que el texto no se pongadetras del menu*/
     list-style: none;
     text-transform: uppercase;
 }
+
 #menu-principal nav ul li{
     display: inline-block;
     position: relative;
@@ -156,16 +169,16 @@ header .container-botones a button  {
 }
 
 #menu-principal nav ul li a:hover,#menu-principal nav ul li a:active{
-    background-color: #209035;
+    background: #71eb71;    
+    color:#000;
 }
 
 #menu-principal nav ul li .children {
     display: none;
     position: absolute;
     z-index: 1000;
-
     background-color: #59C470;
-    width: 100%;/*Sobredimensionamos*/
+    width: 100%;
 }
 
 #menu-principal nav ul li:hover .children {
@@ -184,6 +197,7 @@ header .container-botones a button  {
     font-weight: normal;
 }
 
+/***********--------------------------CONTENEDORES DEPARTAMENTOS-------------------**************/
 
 .container-areaDpto {
     display: flex;
@@ -334,12 +348,14 @@ and (orientation: portrait){
         color: #000000;
         top: 80px;
         font-size: 2.7em;
+        text-shadow: 1px 1px 9px #000000a6;
     } 
     header h3{
         color: #000000;
         position: relative;
         left: 180px;
-        top: 80px;		
+        top: 80px;
+        text-shadow: 1px 1px 9px #000000a6;
     }
 
     header .container-botones{
@@ -384,13 +400,23 @@ and (orientation: portrait){
         border: none;
     }
 
-    #menu-principal nav ul li{
+    #menu-principal nav > ul > li{
         display: block;
         float: none;
-        border-bottom: 1px solid rgba(255,255,255,0.3);		
+        border-bottom: 1px solid rgba(255,255,255,0.5);		
         text-align: justify;
+        background: linear-gradient(0deg,#660000,#2c0000);
     }
-    #menu-principal nav ul li a{
+
+    #menu-principal nav > ul li:first-child{
+        border-top: 1px solid rgba(255,255,255,0.5);
+    }
+
+    #menu-principal nav > ul li:last-child{
+        border-bottom: none;
+    }
+
+    #menu-principal nav > ul > li a{
         color: #ffffff;
     }
 
@@ -398,7 +424,10 @@ and (orientation: portrait){
         width: 100%;
         position: relative;/*Para que no se superpongan a los li padres*/
 
-        background-color: #BEE0BE;
+    }
+
+    #menu-principal nav ul li .children li{
+        background: linear-gradient(0deg,#a45555,#9b2929);
     }
 
     #menu-principal nav ul li:hover .children{

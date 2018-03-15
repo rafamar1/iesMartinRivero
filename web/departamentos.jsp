@@ -29,7 +29,7 @@
     <body>
 
         <header>
-            <img src="css/imagenes/logoMartin.gif"/>
+            <a href="principal.jsp"><img src="css/imagenes/logoMartin.gif"/></a>
             <div class="container-banderas">
                 <img src="css/imagenes/spain_flag.jpg"/>
                 <img src="css/imagenes/british_flag.jpg"/>
@@ -90,7 +90,7 @@
                     <c:if test="${departamento.codigoArea.codigo == areaDpto.codigo}">
                        <article>
                         <h3>${departamento.nombre}</h3>                        
-                        <img src="images/departamentos/Lengua.png">
+                        <img src="images/departamentos/${departamento.imagen}">
                         <p>${departamento.descripcion}</p>			
                     </article>
                     </c:if>

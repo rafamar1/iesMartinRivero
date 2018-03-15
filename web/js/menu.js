@@ -10,7 +10,7 @@ function main(){
 			});
 
 			$('.menu_bar').css('position','fixed');
-			$('.menu_bar').css('background-color','#1b6229');
+			$('.menu_bar').css('background','linear-gradient(0deg,#660000,#2c0000)');
 			$('.menu_bar').css('width','75%');
 			/*INTERCAMBIO DE BOTONES*/
 			$('#bars').css('display','none');
@@ -26,7 +26,7 @@ function main(){
 			});
 			$('.menu_bar').css('position','relative');
 			$('.menu_bar').css('width','auto');
-			$('.menu_bar').css('background-color','transparent');//Ocultamos la barra	
+			$('.menu_bar').css('background','transparent');//Ocultamos la barra	
 			$('#cerrar').css('display','none');
 			$('#bars').css('display','block');
 			$('.menu_bar').animate({

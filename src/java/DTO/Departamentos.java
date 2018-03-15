@@ -34,7 +34,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Departamentos.findAll", query = "SELECT d FROM Departamentos d")
     , @NamedQuery(name = "Departamentos.findByCodigo", query = "SELECT d FROM Departamentos d WHERE d.codigo = :codigo")
     , @NamedQuery(name = "Departamentos.findByNombre", query = "SELECT d FROM Departamentos d WHERE d.nombre = :nombre")
-    , @NamedQuery(name = "Departamentos.findByDescripcion", query = "SELECT d FROM Departamentos d WHERE d.descripcion = :descripcion")})
+    , @NamedQuery(name = "Departamentos.findByDescripcion", query = "SELECT d FROM Departamentos d WHERE d.descripcion = :descripcion")
+    , @NamedQuery(name = "Departamentos.findByImagen", query = "SELECT d FROM Departamentos d WHERE d.imagen = :imagen")})
 public class Departamentos implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +50,9 @@ public class Departamentos implements Serializable {
     @Basic(optional = false)
     @Column(name = "descripcion")
     private String descripcion;
+    @Basic(optional = false)
+    @Column(name = "imagen")
+    private String imagen;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "codigoDpto")
     private List<Noticias> noticiasList;
     @JoinColumn(name = "codigo_area", referencedColumnName = "codigo")
@@ -64,10 +68,11 @@ public class Departamentos implements Serializable {
         this.codigo = codigo;
     }
 
-    public Departamentos(Integer codigo, String nombre, String descripcion) {
+    public Departamentos(Integer codigo, String nombre, String descripcion, String imagen) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.imagen = imagen;
     }
 
     public Integer getCodigo() {
@@ -92,6 +97,14 @@ public class Departamentos implements Serializable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     @XmlTransient

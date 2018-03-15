@@ -20,6 +20,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/cssNoticias/styleFonts.css">
         <link rel="stylesheet" type="text/css" href="css/cssNoticias/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel|Mina|Quicksand" rel="stylesheet">
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/menu.js"></script>
@@ -28,7 +29,7 @@
     <body>
 
         <header>
-            <img src="css/imagenes/logoMartin.gif"/>
+            <a href="principal.jsp"><img src="css/imagenes/logoMartin.gif"/></a>
             <div class="container-banderas">
                 <img src="css/imagenes/spain_flag.jpg"/>
                 <img src="css/imagenes/british_flag.jpg"/>
@@ -88,8 +89,8 @@
                         <img src="images/news/${noticia.imagen}">
                         <p class="subtitulo">${noticia.subtitulo}</p>
                         <p>${noticia.descripcion}</p>
-                        <a href="#">${noticia.codigoDpto}</a>	
-                        <span><fmt:formatDate pattern = "yyyy-MM-dd" value = "${noticia.fechaPublicacion}"/></span>			
+                        <a href="#">${noticia.codigoDpto.nombre}</a>	
+                        <span><span class="icon-calendar"><fmt:formatDate pattern = "dd-MM-yyyy" value = "${noticia.fechaPublicacion}"/></span>			
                     </article>
                 </c:forEach>
                 
