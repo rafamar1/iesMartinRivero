@@ -416,6 +416,77 @@ footer{
     cursor: pointer;
 }
 
+/*************----------PAGINA LOGIN---------------------------------------------********/
+
+#container-admin{
+    position: relative;
+    width: 60%;
+    margin: 115px auto;
+    min-width: 550px;
+}
+
+#container-admin h2{
+    margin: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: #630909;
+    font-size: 2.5vw;
+}
+
+#container-admin h3{
+    margin: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #686161;
+    font-size: 14px;
+}
+
+#container-admin form{
+    background: linear-gradient(180deg,#f5fcf2,#d1ecd1);
+    border: 3px solid lightgreen;
+    border-radius: 20px;
+    margin: 12px auto;
+    width: 50%;
+    padding: 15px;    
+    font-family: 'Abel', sans-serif;
+}
+
+#container-admin form p{
+    width:80%;
+    margin:15px; 
+}
+
+#container-admin form label{
+    width:100px;
+    display: inline-block;
+}
+#container-admin form label + input{
+    width:60%;
+}
+#container-admin form input[type="submit"],form input[type="reset"]{    
+    background: linear-gradient(0deg,#760000,#470000);
+    border: 3px solid darkred;
+    border-radius: 8px;
+    padding: 5px 16px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    font-size: 1em;
+}
+
+#container-admin form input[type="submit"]:hover,#container-admin form input[type="reset"]:hover{     
+    cursor: pointer;
+    background: linear-gradient(180deg,#760000,#060000);
+    border-color: #830000;
+    font-size: 1.05em;
+}
+
+#container-admin form input[type="reset"]{
+    float:right;    
+    padding: 3px 12px;
+}
+
+#container-admin form textarea{    
+    width: 275px;
+    padding: 5px;
+}
 
 
 /**********************----------------------ESTILO PARA TABLET-------------**************/

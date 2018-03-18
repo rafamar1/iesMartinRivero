@@ -4,9 +4,17 @@
         <servlet-name>CargaDatos</servlet-name>
         <servlet-class>server.CargaDatos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CompruebaLogin</servlet-name>
+        <servlet-class>server.CompruebaLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CargaDatos</servlet-name>
         <url-pattern>/CargaDatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CompruebaLogin</servlet-name>
+        <url-pattern>/CompruebaLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
