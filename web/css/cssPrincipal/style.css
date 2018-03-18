@@ -517,7 +517,7 @@ and (orientation: portrait){
     }
 
     #menu-principal nav ul li .children li{
-        background: linear-gradient(0deg,#a45555,#9b2929);
+        background:linear-gradient(0deg,#a45555,#601616);
     }
 
     #menu-principal nav ul li:hover .children{

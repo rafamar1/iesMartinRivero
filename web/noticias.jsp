@@ -45,40 +45,39 @@
 
         <div id="menu-principal">
             <div class="menu_bar">
-                <a href="#" class="boton_menu" id="bars"><span class="icon-menu"></span></a>
-                <a href="#" class="boton_menu" id="cerrar"><span class="icon-cross"></span>MENU</a>
+                <a title="Abrir Menú Desplegable" href="#" class="boton_menu" id="bars"><span class="icon-menu"></span></a>
+                <a title="Cerrar el Menú Desplegable" href="#" class="boton_menu" id="cerrar"><span class="icon-cross"></span>MENU</a>
             </div>
 
             <nav>
                 <ul>
-                    <li><a href="principal.jsp"><span class="icon-home3"></span>Inicio</a></li>
-                    <li><a href="#paginaNoticias"><span class="icon-newspaper"></span>Noticias</a></li>
+                    <li><a tabindex="7" title="Enlace a la sección Principal" href="principal.jsp"><span class="icon-home3"></span>Inicio</a></li>
+                    <li><a tabindex="8" title="Enlace a la sección Principal" href="noticias.jsp"><span class="icon-newspaper"></span>Noticias</a></li>
                     <li class="submenu">
-                        <a href="#">
+                        <a tabindex="9" title="Submenú de Cursos" href="#">
                             <span class="icon-study"></span>Estudios<span class="caret icon-cheveron-down"></span>
                         </a>
                         <ul class="children">
-                            <li><a href="#paginaEstudios">Secundaria</a></li>
-                            <li><a href="#paginaEstudios">Bachillerato</a></li>
-                            <li><a href="#paginaEstudios">Formacion Profesional</a></li>
+                            <li><a title="Enlace a la sección Estudios" href="estudios.jsp">Secundaria</a></li>
+                            <li><a title="Enlace a la secciónn Estudios" href="estudios.jsp">Bachillerato</a></li>
+                            <li><a title="Enlace a la sección Estudios" href="estudios.jsp">Formacion Profesional</a></li>
                         </ul>
                     </li>
                     <li class="submenu">
-                        <a href="#">
+                        <a tabindex="10" title="Submenú de Departamentos" href="#">
                             <span class="icon-briefcase"></span>Departamentos<span class="caret icon-cheveron-down"></span>
                         </a>
                         <ul class="children">
-                            <li><a href="departamentos.jsp">Lingüistica</a></li>
-                            <li><a href="departamentos.jsp">Científico-Tecnologica</a></li>
-                            <li><a href="departamentos.jsp">Artística</a></li>
-                            <li><a href="departamentos.jsp">Familias Profesionales</a></li>
+                            <li><a title="Enlace a la sección Departamentos" href="departamentos.jsp">Lingüistica</a></li>
+                            <li><a title="Enlace a la sección Departamentos" href="departamentos.jsp">Científico-Tecnologica</a></li>
+                            <li><a title="Enlace a la sección Departamentos" href="departamentos.jsp">Artística</a></li>
+                            <li><a title="Enlace a la sección Departamentos" href="departamentos.jsp">Familias Profesionales</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><span class="icon-envelop"></span>Contacto</a></li>
+                    <li><a tabindex="11" title="Enlace a la sección contacto" href="contacto.jsp"><span class="icon-envelop"></span>Contacto</a></li>
                 </ul>
             </nav>		
         </div>
-
         <div id="main-container">
             <section id="noticias">
                 <h1>NOTICIAS</h1>
@@ -86,11 +85,11 @@
                 <c:forEach items="${listaNoticias}" var="noticia">
                     <article>
                         <h3>${noticia.titular}</h3>                        
-                        <img src="images/news/${noticia.imagen}">
+                        <img src="images/news/${noticia.imagen}"/>
                         <p class="subtitulo">${noticia.subtitulo}</p>
                         <p>${noticia.descripcion}</p>
-                        <a href="#">${noticia.codigoDpto.nombre}</a>	
-                        <span><span class="icon-calendar"><fmt:formatDate pattern = "dd-MM-yyyy" value = "${noticia.fechaPublicacion}"/></span>			
+                        <a href="#" title='Filtrar por este departamento'>${noticia.codigoDpto.nombre}</a>	
+                        <span class="icon-calendar"><fmt:formatDate pattern = "dd-MM-yyyy" value = "${noticia.fechaPublicacion}"/></span>			
                     </article>
                 </c:forEach>
                 
@@ -142,16 +141,14 @@
                         <p><span class="icon-envelop"></span>info@iesmartinrivero.com</p>
                     </div>
                     <div class="footer-columna">
-                        <img src="css/imagenes/educaMinisterio.png"/>
+                        <img src="css/imagenes/educaMinisterio.png" alt="Logo gobierno de España"/>
                     </div>
                     <div class="footer-columna">
-                        <img src="css/imagenes/educaJunta.png"/>
+                        <img src="css/imagenes/educaJunta.png" alt="Logo junta de andalucia"/>
                     </div>
                 </div>
                 <p>&copy; 2018 I.E.S. Martín Rivero</p>					
             </div>
         </footer>
-
-
     </body>
 </html>

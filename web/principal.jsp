@@ -48,40 +48,41 @@
 
         <div id="menu-principal">
             <div class="menu_bar">
-                <a href="#" class="boton_menu" id="bars"><span class="icon-menu"></span></a>
-                <a href="#" class="boton_menu" id="cerrar"><span class="icon-cross"></span>MENU</a>
+                <a title="Abrir Menú Desplegable" href="#" class="boton_menu" id="bars"><span class="icon-menu"></span></a>
+                <a title="Cerrar el Menú Desplegable" href="#" class="boton_menu" id="cerrar"><span class="icon-cross"></span>MENU</a>
             </div>
 
             <nav>
                 <ul>
-                    <li><a href="principal.jsp"><span class="icon-home3"></span>Inicio</a></li>
-                    <li><a href="noticias.jsp"><span class="icon-newspaper"></span>Noticias</a></li>
+                    <li><a tabindex="7" title="Enlace a la sección Principal" href="principal.jsp"><span class="icon-home3"></span>Inicio</a></li>
+                    <li><a tabindex="8" title="Enlace a la sección Principal" href="noticias.jsp"><span class="icon-newspaper"></span>Noticias</a></li>
                     <li class="submenu">
-                        <a href="#">
+                        <a tabindex="9" title="Submenú de Cursos" href="#">
                             <span class="icon-study"></span>Estudios<span class="caret icon-cheveron-down"></span>
                         </a>
                         <ul class="children">
-                            <li><a href="#paginaEstudios">Secundaria</a></li>
-                            <li><a href="#paginaEstudios">Bachillerato</a></li>
-                            <li><a href="#paginaEstudios">Formacion Profesional</a></li>
+                            <li><a title="Enlace a la sección Estudios" href="estudios.jsp">Secundaria</a></li>
+                            <li><a title="Enlace a la secciónn Estudios" href="estudios.jsp">Bachillerato</a></li>
+                            <li><a title="Enlace a la sección Estudios" href="estudios.jsp">Formacion Profesional</a></li>
                         </ul>
                     </li>
                     <li class="submenu">
-                        <a href="#">
+                        <a tabindex="10" title="Submenú de Departamentos" href="#">
                             <span class="icon-briefcase"></span>Departamentos<span class="caret icon-cheveron-down"></span>
                         </a>
                         <ul class="children">
-                            <li><a href="departamentos.jsp">Lingüistica</a></li>
-                            <li><a href="departamentos.jsp">Científico-Tecnologica</a></li>
-                            <li><a href="departamentos.jsp">Artística</a></li>
-                            <li><a href="departamentos.jsp">Familias Profesionales</a></li>
+                            <li><a title="Enlace a la sección Lingüistica" href="departamentos.jsp#cad_1">Lingüistica</a></li>
+                            <li><a title="Enlace a la sección Científico-Tecnologica" href="departamentos.jsp#cad_2">Científico-Tecnologica</a></li>
+                            <li><a title="Enlace a la sección Artística" href="departamentos.jsp#cad_3">Artística</a></li>
+                            <li><a title="Enlace a la sección Familias Profesionales" href="departamentos.jsp#cad_4">Familias Profesionales</a></li>
+                            <li><a title="Enlace a la sección Otros" href="departamentos.jsp#cad_5">Otros</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><span class="icon-envelop"></span>Contacto</a></li>
+                    <li><a tabindex="11" title="Enlace a la sección contacto" href="contacto.jsp"><span class="icon-envelop"></span>Contacto</a></li>
                 </ul>
             </nav>		
         </div>
-
+        
         <div id="bienvenida">
             <p class="welcome-short">Bienvenidos al sitio web del Instituto Martín Rivero</p>
             <p class="welcome-large">Bienvenidos al sitio web del Instituto Martín Rivero,
@@ -92,7 +93,7 @@
 
         <div class="container-slider">
             <div id="slides">
-                <img src="images/slider/example-slide-2.jpg" alt="Enlace a nuestro Blog de Noticias">
+                <img src="images/departamentos/secretaria.jpg" alt="Enlace a nuestro Blog de Noticias">
                 <img src="images/news/daw_entrega_banda.jpg" alt="Visite nuestro apartado de Estudios">
                 <img src="images/slider/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
                 <img src="images/news/entrevista_marcos2.jpg" alt="Bienvenido a la página web del Instituto Martín Rivero">
@@ -135,10 +136,10 @@
                         <p><span class="icon-envelop"></span>info@iesmartinrivero.com</p>
                     </div>
                     <div class="footer-columna">
-                        <img src="css/imagenes/educaMinisterio.png"/>
+                        <img src="css/imagenes/educaMinisterio.png" alt="Logo gobierno de España"/>
                     </div>
                     <div class="footer-columna">
-                        <img src="css/imagenes/educaJunta.png"/>
+                        <img src="css/imagenes/educaJunta.png" alt="Logo junta de andalucia"/>
                     </div>
                 </div>
                 <p>&copy; 2018 I.E.S. Martín Rivero</p>					

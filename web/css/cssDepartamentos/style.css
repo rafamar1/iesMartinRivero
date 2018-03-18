@@ -128,7 +128,6 @@ header .container-botones a button  {
     width: 100%;    
     font-family: 'Quicksand', sans-serif;
 }
-
 #menu-principal nav{
     width: 90%;
     max-width: 1000px;
@@ -169,7 +168,7 @@ header .container-botones a button  {
 }
 
 #menu-principal nav ul li a:hover,#menu-principal nav ul li a:active{
-    background: #71eb71;    
+    background: #71eb71;
     color:#000;
 }
 
@@ -198,11 +197,19 @@ header .container-botones a button  {
 }
 
 /***********--------------------------CONTENEDORES DEPARTAMENTOS-------------------**************/
+#departamentos > h1 {
+    border-bottom: 2px solid #5e0000;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    color: #5e0000;
+    text-shadow: 0px 0px 1px #320101;
+}
 
 .container-areaDpto {
     display: flex;
     flex-wrap: wrap;
     margin:30px;
+    justify-content: center;
 
 }
 .container-areaDpto h2{
@@ -211,11 +218,11 @@ header .container-botones a button  {
     margin-bottom: 15px;
 }
 .container-areaDpto article {
-    flex: 1;
+    flex: 27%;
+    max-width: 31%;
     margin: 10px;
     padding: 20px;
     border: 2px solid darkred;
-    -webkit-box-shadow: 1px 1px 10px darkgrey;
     box-shadow: 1px 1px 10px darkgrey;
     background-color: #fff;
 }
@@ -231,9 +238,10 @@ header .container-botones a button  {
 }
 
 /*Estilos individuales por Areas de Departamentos*/
-.container-areaDpto:nth-child(2) h2{color: lightgreen;}
-.container-areaDpto:nth-child(2) article {border-color: lightgreen;}
-.container-areaDpto:nth-child(2) article h3{color: lightgreen;}
+
+.container-areaDpto:nth-child(2) h2{color: darkseagreen; border-color: darkseagreen}
+.container-areaDpto:nth-child(2) article {border-color: darkseagreen;}
+.container-areaDpto:nth-child(2) article h3{color: darkseagreen;}
 
 
 .container-areaDpto:nth-child(3) h2{color: darkred; border-color: darkred}
@@ -241,9 +249,9 @@ header .container-botones a button  {
 .container-areaDpto:nth-child(3) article h3{color: darkred;}
 
 
-.container-areaDpto:nth-child(4) h2{color: darkseagreen; border-color: darkseagreen}
-.container-areaDpto:nth-child(4) article {border-color: darkseagreen;}
-.container-areaDpto:nth-child(4) article h3{color: darkseagreen;}
+.container-areaDpto:nth-child(4) h2{color: lightgreen;}
+.container-areaDpto:nth-child(4) article {border-color: lightgreen;}
+.container-areaDpto:nth-child(4) article h3{color: lightgreen;}
 
 .container-areaDpto:nth-child(5) h2{color: #3399ff; border-color: #3399ff;}
 .container-areaDpto:nth-child(5) article {border-color: #3399ff;}
@@ -295,6 +303,7 @@ footer{
     font-size: 32px;
     color: lightgreen;
     margin-bottom: 20px;
+    font-family: 'Abel', sans-serif;
 }
 
 .footer-main .footer-columna p{
@@ -427,7 +436,7 @@ and (orientation: portrait){
     }
 
     #menu-principal nav ul li .children li{
-        background: linear-gradient(0deg,#a45555,#9b2929);
+        background:linear-gradient(0deg,#a45555,#601616);
     }
 
     #menu-principal nav ul li:hover .children{
@@ -437,8 +446,11 @@ and (orientation: portrait){
     #menu-principal nav ul li .caret {
         float: right;
     }
+    
+    .container-areaDpto article {
+        max-width: none;
+    }
 }
-
 
 
 /**********************----------------------ESTILO PARA MOVIL-------------**************/

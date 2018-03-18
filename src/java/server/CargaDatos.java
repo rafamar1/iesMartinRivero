@@ -8,7 +8,6 @@ package server;
 import DAO.*;
 import DTO.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -40,17 +39,24 @@ public class CargaDatos extends HttpServlet {
         NoticiasJpaController ctrlNoticias = new NoticiasJpaController(emf);
         DepartamentosJpaController ctrlDepartamentos = new DepartamentosJpaController(emf);
         AreaDptoJpaController ctrlAreaDpto = new AreaDptoJpaController(emf);
+        AsignaturasJpaController ctrlAsignaturas = new AsignaturasJpaController(emf);
+        CursosJpaController ctrlCursos = new CursosJpaController(emf);
         int ultimaNoticia = ctrlNoticias.getNoticiasCount();
 
         List<Noticias> listaNoticiasPrincipal = ctrlNoticias.findNoticiasEntities(4, ultimaNoticia - 4);
         List<Noticias> listaNoticias = ctrlNoticias.findNoticiasEntities();
         List<AreaDpto> listaAreaDpto = ctrlAreaDpto.findAreaDptoEntities();
         List<Departamentos> listaDepartamentos = ctrlDepartamentos.findDepartamentosEntities();
+        List<Asignaturas> listaAsignaturas = ctrlAsignaturas.findAsignaturasEntities();
+        List<Cursos> listaCursosBach = ctrlCursos.findCursosEntities(8, 4);
 
         request.setAttribute("listaNoticiasPrincipal", listaNoticiasPrincipal);
         request.setAttribute("listaNoticias", listaNoticias);
         request.setAttribute("listaAreaDpto", listaAreaDpto);
         request.setAttribute("listaDepartamentos", listaDepartamentos);
+        request.setAttribute("listaAsignaturas", listaAsignaturas);
+        request.setAttribute("listaCursos", listaCursosBach);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
