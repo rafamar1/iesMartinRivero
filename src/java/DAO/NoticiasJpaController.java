@@ -16,6 +16,7 @@ import DTO.Noticias;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -164,5 +165,12 @@ public class NoticiasJpaController implements Serializable {
             em.close();
         }
     }
+    
+    /*public List<Noticias> findNoticiasByCodDepart(int codigo_dpto) {
+        EntityManager em = getEntityManager();
+        TypedQuery q = em.createNamedQuery("Noticias.findByCod_dpto", Noticias.class);
+        q.setParameter("codigo_dpto", codigo_dpto);
+        return q.getResultList();
+    }*/
     
 }

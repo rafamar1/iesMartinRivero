@@ -8,6 +8,7 @@ package server;
 import DAO.*;
 import DTO.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -43,15 +44,28 @@ public class CargaDatos extends HttpServlet {
         CursosJpaController ctrlCursos = new CursosJpaController(emf);
         int ultimaNoticia = ctrlNoticias.getNoticiasCount();
 
-        List<Noticias> listaNoticiasPrincipal = ctrlNoticias.findNoticiasEntities(4, ultimaNoticia - 4);
         List<Noticias> listaNoticias = ctrlNoticias.findNoticiasEntities();
+        List<Noticias> listaAux = new ArrayList();
+        /*Filtro de Noticias*/
+        if (request.getParameter("codigoDepart") != null && !request.getParameter("codigoDepart").equals("")) {
+            int codigoDepart = Integer.parseInt(request.getParameter("codigoDepart"));
+            for (Noticias noticia : listaNoticias) {
+                if (noticia.getCodigoDpto().getCodigo() == codigoDepart) {
+                    listaAux.add(noticia);
+                }
+            }
+            request.setAttribute("listaNoticias", listaAux);
+        } else {
+            request.setAttribute("listaNoticias", listaNoticias);
+        }
+
+        List<Noticias> listaNoticiasPrincipal = ctrlNoticias.findNoticiasEntities(4, ultimaNoticia - 4);
         List<AreaDpto> listaAreaDpto = ctrlAreaDpto.findAreaDptoEntities();
         List<Departamentos> listaDepartamentos = ctrlDepartamentos.findDepartamentosEntities();
         List<Asignaturas> listaAsignaturas = ctrlAsignaturas.findAsignaturasEntities();
         List<Cursos> listaCursosBach = ctrlCursos.findCursosEntities(8, 4);
 
         request.setAttribute("listaNoticiasPrincipal", listaNoticiasPrincipal);
-        request.setAttribute("listaNoticias", listaNoticias);
         request.setAttribute("listaAreaDpto", listaAreaDpto);
         request.setAttribute("listaDepartamentos", listaDepartamentos);
         request.setAttribute("listaAsignaturas", listaAsignaturas);

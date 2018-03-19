@@ -212,6 +212,7 @@ header .container-botones a button  {
     flex-wrap: wrap;
     /*flex: 60%;*/
     margin: 20px;
+    justify-content: center;
 }
 
 aside{
@@ -241,8 +242,9 @@ aside{
     font-family: 'Quicksand', sans-serif;
     color: #666666;
 }
-#noticias article {
+#noticias  article {
     flex: calc(100%/3);
+    max-width: 70%;
     margin: 10px;
     padding: 20px;
     border: 2px solid darkred;
@@ -250,7 +252,7 @@ aside{
     box-shadow: 1px 1px 10px darkgrey;
     font-family: 'Abel', sans-serif;		
 }
-#noticias article:hover{
+#noticias  article:hover{
     background: linear-gradient(180deg,#f3f3f3,#d9d9d9);
     transform: scale(1.02);
     transition-property: transform;
@@ -258,56 +260,59 @@ aside{
     box-shadow: 3px 5px 15px #000;
 }
 
-#noticias article img {
+#noticias  article img {
     width: 100%;
     border: 1px solid lightgrey;
 }
 
-#noticias article h3{
+#noticias  article h3{
     font-size: 1.6em;
     border-bottom: 1px solid lightgrey;
     margin-bottom: 30px;
 }
 
-#noticias article  p{
+#noticias  article  p{
     margin: 15px 0px;
 }
 
-#noticias article .subtitulo + p {
+#noticias  article .subtitulo + p {
     margin: 15px 5px;
     text-align: justify;
     font-family: 'Arial';
     font-size: 0.9em;
 }
 
-#noticias article span{
+#noticias  article span{
     color: #480000;
     font-size: 1em;
     float: left;
 }
-#noticias article span.icon-calendar:before{
+#noticias  article span.icon-calendar:before{
     margin-right: 5px;
 }
-#noticias .subtitulo{
+#noticias  .subtitulo{
     font-size: 1.1em;
     font-weight: bold;
     color: #5b0101;
 }
 
-#noticias article a{
+#noticias  article input[type="submit"]{
     float: right;
     text-decoration: none;
     color: grey;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
+    border: none;
+    background: transparent;
 }
 
-#noticias article a:hover{
+#noticias  article input[type="submit"]:hover{
     color: blue;    
     text-decoration: underline;
     transform: scale(1.07);
     transition-property: transform;
     transition-duration: 0.1s;
+    cursor: pointer;
 }
 
 

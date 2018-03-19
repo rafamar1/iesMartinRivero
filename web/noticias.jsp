@@ -83,16 +83,21 @@
                 <h1>NOTICIAS</h1>
                 <h3>Boletín de noticias del IES Martín Rivero</h3>
                 <c:forEach items="${listaNoticias}" var="noticia">
+
                     <article>
-                        <h3>${noticia.titular}</h3>                        
-                        <img src="images/news/${noticia.imagen}"/>
-                        <p class="subtitulo">${noticia.subtitulo}</p>
-                        <p>${noticia.descripcion}</p>
-                        <a href="#" title='Filtrar por este departamento'>${noticia.codigoDpto.nombre}</a>	
-                        <span class="icon-calendar"><fmt:formatDate pattern = "dd-MM-yyyy" value = "${noticia.fechaPublicacion}"/></span>			
+                        <form action="noticias.jsp" method="post">
+                            <h3>${noticia.titular}</h3>                        
+                            <img src="images/news/${noticia.imagen}" alt="${noticia.titular}"/>
+                            <p class="subtitulo">${noticia.subtitulo}</p>
+                            <p>${noticia.descripcion}</p>
+                            <input type="hidden" name="codigoDepart" value="${noticia.codigoDpto.codigo}"/>
+                            <input type="submit" title='Filtrar por este departamento' value="${noticia.codigoDpto.nombre}"/>	
+                            <span class="icon-calendar"><fmt:formatDate pattern = "dd-MM-yyyy" value = "${noticia.fechaPublicacion}"/></span>			
+                        </form>
                     </article>
+
                 </c:forEach>
-                
+
             </section>
 
             <aside>
@@ -103,6 +108,10 @@
                         <li>Eventos</li>
                         <li>Deportes</li>
                         <li>Concursos</li>
+                        <li>Investigación y Desarrollo</li>
+                        <li>Departamento de Ciencias</li>
+                        <li>Departamento de Lingüística</li>
+                        <li>Departamento de Artes</li>                        
                     </ul>
                 </div>
                 <div id="fechas">
