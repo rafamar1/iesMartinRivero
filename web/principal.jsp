@@ -133,7 +133,7 @@
             <p><fmt:message key='newsletter1'/></p>
             <p><fmt:message key='newsletter2'/></p>
             <form action="altaNewsletter">
-                <input type="email" placeholder="<fmt:message key='email'/>"/><span class="icon-paper-plane-o"></span><input type="submit" value="Enviar"/>		
+                <input type="email" placeholder="<fmt:message key='email'/>"/><input type="submit" value="Enviar"/>		
             </form>
         </section>    
 

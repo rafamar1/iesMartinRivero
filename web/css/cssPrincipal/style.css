@@ -387,15 +387,17 @@ footer{
 
 #newsletter input[type=submit] {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    background-color: #fefe37;
-    color: #fefe37;
-    border: none;
+    height: 46px;
+    width: 46px;
+    background: #fefe37 url("../imagenes/newsletter.png") no-repeat center center;
+    background-size: 50%;
     text-align: center;
     position: absolute;
-    right: 6px;
+    right: 23px;
     top: 0px;
+    text-indent: 9999em;
+    border: 1px solid #ee9e0c;
+    cursor: pointer;
 }
 
 #newsletter input[type=email]:focus {
@@ -404,9 +406,7 @@ footer{
 }
 
 #newsletter input[type=submit]:hover {
-    background-color: orange;
-    color: orange;
-    cursor: pointer;
+    background-color: #ee9e0c;
 }
 
 #newsletter span {
