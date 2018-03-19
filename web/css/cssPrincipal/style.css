@@ -64,13 +64,17 @@ header .container-banderas{
     margin: 15px; 
 }
 
-header .container-banderas img{
+header .container-banderas form{
+    display: inline-block;
+}
+
+header .container-banderas input[type="image"]{
     width: 40px;
     height: 25px;	
     margin: 0px 5px;
 }
 
-header .container-banderas img:hover{
+header .container-banderas input:hover{
     transform: scale(1.15);
     transition-property: transform;
     transition-duration: 0.2s;
@@ -90,6 +94,7 @@ header .container-botones button {
     min-width: 120px;
     width: 12%;
     margin: 0px 10px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 header .container-botones a:hover button {
@@ -417,11 +422,16 @@ footer{
 }
 
 /*************----------PAGINA LOGIN---------------------------------------------********/
-
+header form.logout input[type='image']{
+    width: 50px;
+    position: absolute;
+    right: 3%;
+    top: 5.5em;
+}
 #container-admin{
     position: relative;
     width: 60%;
-    margin: 115px auto;
+    margin: 105px auto;
     min-width: 550px;
 }
 

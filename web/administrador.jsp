@@ -11,7 +11,9 @@
 <%@page import="DTO.*"%>
 
 <!DOCTYPE html>
-
+<c:if test="${!sessionScope.loginOk}">
+    <jsp:forward page="/login.jsp"/>
+</c:if>
 <jsp:include page="/CargaDatos"/>
 <html>       
     <head>
@@ -26,6 +28,7 @@
 
     <body>
 
+
         <header>
             <a href="principal.jsp"><img src="css/imagenes/logoMartin.gif"/></a>
             <div class="container-banderas">
@@ -33,42 +36,44 @@
                 <img src="css/imagenes/british_flag.jpg"/>
             </div>
             <h1>IES Martín Rivero</h1>
-            <h3>Creamos tu futuro</h3>            
+            <h3>Creamos tu futuro</h3>
+            <form action='Logout' method='POST' class="logout"> 
+                <input type='image' src='css/imagenes/logout.png' title='Cerrar Sesion'>
+            </form>            
         </header>
 
 
 
-        <div id="container-admin">        
+        <div id="container-admin">    
 
             <h2>Bienvenido al Modo Administrador</h2>
             <h3>Ahora puedes dar de alta noticias en la Base de datos</h3>
-            <c:if test="${!sessionScope.loginOk}">
-                <jsp:forward page="/login.jsp"/>
+            <c:if test="${sessionScope.altaNoticia != null}">
+                <p style="text-align: center;color: #105e10;">${sessionScope.altaNoticia}</p>
             </c:if>
-
-            <form action="administrador.jsp" method="post">
+            <form action="AltaNews" method="post" enctype="multipart/form-data">
                 <p> 
-                    <label for="usuario">Titular</label>
-                    <input type="text" name="titular"/>
+                    <label for="titular">Titular</label>
+                    <input type="text" name="titular" required/>
                 </p>
                 <p>
-                    <label for="password">Subtitulo</label>
-                    <input type="password" name="subtitulo"/>
+                    <label for="subtitulo">Subtitulo</label>
+                    <input type="text" name="subtitulo" required/>
                 </p>
                 <p>
                     <label for="imagen">Imagen</label>
-                    <input type="file" name="imagen"/>
+                    <input type="file" name="imagen" required/>
                 </p>
                 <p>
                     <label for="Departamento">Departamento</label>
-                    <select name="departamento">
+                    <select name="departamento" required>
                         <c:forEach var="departamento" items="${listaDepartamentos}">
                             <option value="${departamento.codigo}">${departamento.nombre}</option>
                         </c:forEach>
                     </select> 
                 </p>
                 <p>Cuerpo de la noticia </p>
-                <p><textarea maxlength="5000" rows="8" name="descripcion"></textarea></p>
+                <p><textarea maxlength="5000" rows="8" name="descripcion" required></textarea></p>
 
                 <input type="submit" value="Crear Noticia" /><input type="reset" value="Limpiar"/>
             </form>

@@ -12,11 +12,16 @@
 
 <!DOCTYPE html>
 
-<jsp:include page="/CargaDatos"/>   
+<jsp:include page="/CargaDatos"/>
+<c:if test="${!empty param.language}">
+    <fmt:setLocale value="${param.language}"/>
+    <c:set var="language" scope="session" value="${param.language}"/>
+</c:if>
+<fmt:setBundle basename="idiomas.recursos"/>
 <html>       
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Noticias - Instituto Martín Rivero</title>
+        <title><fmt:message key='titleNoticias'/> - Instituto Martín Rivero</title>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/cssNoticias/styleFonts.css">
         <link rel="stylesheet" type="text/css" href="css/cssNoticias/style.css">
@@ -80,8 +85,8 @@
         </div>
         <div id="main-container">
             <section id="noticias">
-                <h1>NOTICIAS</h1>
-                <h3>Boletín de noticias del IES Martín Rivero</h3>
+                <h1><fmt:message key='menuNoticias'/></h1>
+                <h3><fmt:message key='boletin'/></h3>
                 <c:forEach items="${listaNoticias}" var="noticia">
 
                     <article>
@@ -102,20 +107,18 @@
 
             <aside>
                 <div id="categorias">
-                    <h2>CATEGORÍA</h2>
+                    <h2><fmt:message key='cabCategoria'/></h2>
                     <ul>
-                        <li>Secretaría</li>
-                        <li>Eventos</li>
-                        <li>Deportes</li>
-                        <li>Concursos</li>
-                        <li>Investigación y Desarrollo</li>
-                        <li>Departamento de Ciencias</li>
-                        <li>Departamento de Lingüística</li>
-                        <li>Departamento de Artes</li>                        
+                        <li><fmt:message key='subSecretaria'/></li>
+                        <li><fmt:message key='subEventos'/></li>
+                        <li><fmt:message key='subDeportes'/></li>
+                        <li><fmt:message key='subIDI'/></li>
+                        <li><fmt:message key='subCiencia'/></li>
+
                     </ul>
                 </div>
                 <div id="fechas">
-                    <h2>ARCHIVO DE NOTICIAS</h2>
+                    <h2><fmt:message key='cabArchivo'/></h2>
                     <ul>
                         <li>Enero de 2018(5)</li>
                         <li>Diciembre de 2017(2)</li>
@@ -129,13 +132,12 @@
 
                 <div id="newsletter"> 
                     <h2>NEWSLETTER</h2>
-                    <p>¡Sucríbete a nuestro boletín!</p>
-                    <p>Te enviaremos un email cada vez que publiquemos una noticia nueva.</p>
+                    <p><fmt:message key='newsletter1'/></p>
+                    <p><fmt:message key='newsletter2'/></p>
                     <form action="altaNewsletter">
-                        <input type="email" placeholder="Dirección de E-mail"/>
-                        <span class="icon-paper-plane-o"></span><input type="submit" value="Enviar"/>		
+                        <input type="email" placeholder="<fmt:message key='email'/>"/><span class="icon-paper-plane-o"></span><input type="submit" value="Enviar"/>		
                     </form>
-                </div>      
+                </div>
             </aside>
         </div>
 

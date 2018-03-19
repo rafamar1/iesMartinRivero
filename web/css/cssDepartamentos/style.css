@@ -216,6 +216,8 @@ header .container-botones a button  {
     flex: 100%;
     border-bottom: 2px solid lightgreen;
     margin-bottom: 15px;
+    font-size: 1.9em;    
+    font-family: 'Quicksand', sans-serif;
 }
 .container-areaDpto article {
     flex: 27%;
@@ -232,34 +234,50 @@ header .container-botones a button  {
     border: 1px solid lightgrey;
 }
 
+.container-areaDpto article:hover img {
+    transform: scaleX(1.1);
+    transition-property: transform;
+    transition-duration: 1s;
+}
+.container-areaDpto article:hover{
+   box-shadow: 0px 0px 9px #000c;
+}
+ 
 .container-areaDpto article h3, .container-areaDpto article p {
     margin: 12px 0px;
     text-align: justify;
+    font-family: 'Quicksand', sans-serif;
 }
-
+.container-areaDpto article h3{
+    font-size: 1.4em;
+    font-family: 'Abel', sans-serif;
+}
 /*Estilos individuales por Areas de Departamentos*/
-
 .container-areaDpto:nth-child(2) h2{color: darkseagreen; border-color: darkseagreen}
 .container-areaDpto:nth-child(2) article {border-color: darkseagreen;}
 .container-areaDpto:nth-child(2) article h3{color: darkseagreen;}
+.container-areaDpto:nth-child(2) article:hover {background: linear-gradient(180deg,white 70%,darkseagreen);}
 
 
-.container-areaDpto:nth-child(3) h2{color: darkred; border-color: darkred}
-.container-areaDpto:nth-child(3) article {border-color: darkred;}
-.container-areaDpto:nth-child(3) article h3{color: darkred;}
-
+.container-areaDpto:nth-child(3) h2{color: #3399ff; border-color: #3399ff;}
+.container-areaDpto:nth-child(3) article {border-color: #3399ff;}
+.container-areaDpto:nth-child(3) article h3{color: #3399ff;}
+.container-areaDpto:nth-child(3) article:hover {background: linear-gradient(180deg,white 70%,#3399ff);}
 
 .container-areaDpto:nth-child(4) h2{color: lightgreen;}
 .container-areaDpto:nth-child(4) article {border-color: lightgreen;}
 .container-areaDpto:nth-child(4) article h3{color: lightgreen;}
+.container-areaDpto:nth-child(4) article:hover {background: linear-gradient(180deg,white 70%,lightgreen);}
 
-.container-areaDpto:nth-child(5) h2{color: #3399ff; border-color: #3399ff;}
-.container-areaDpto:nth-child(5) article {border-color: #3399ff;}
-.container-areaDpto:nth-child(5) article h3{color: #3399ff;}
+.container-areaDpto:nth-child(5) h2{color: darkred; border-color: darkred}
+.container-areaDpto:nth-child(5) article {border-color: #b12020;}
+.container-areaDpto:nth-child(5) article h3{color: #b12020;}
+.container-areaDpto:nth-child(5) article:hover {background: linear-gradient(180deg,white 70%,#b12020);}
 
 .container-areaDpto:nth-child(6) h2{color: grey; border-color: grey;}
 .container-areaDpto:nth-child(6) article {border-color: grey;}
 .container-areaDpto:nth-child(6) article h3{color: grey;}
+.container-areaDpto:nth-child(6) article:hover {background: linear-gradient(180deg,white 70%,grey);}
 
 section{
     padding: 20px;
@@ -446,7 +464,7 @@ and (orientation: portrait){
     #menu-principal nav ul li .caret {
         float: right;
     }
-    
+
     .container-areaDpto article {
         max-width: none;
     }
