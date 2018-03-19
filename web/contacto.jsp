@@ -5,6 +5,11 @@
 <%@page import="DTO.*"%>
 
 <!DOCTYPE html>
+<c:if test="${!empty param.language}">
+    <fmt:setLocale value="${param.language}"/>
+    <c:set var="language" scope="session" value="${param.language}"/>
+</c:if>
+<fmt:setBundle basename="idiomas.recursos"/> 
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,29 +19,38 @@
         <link rel="stylesheet" type="text/css" href="css/cssContacto/style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Abel|Mina|Quicksand" rel="stylesheet"/>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="js/jquery.slides.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/menu.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script src="js/localizacion.js"></script>
+
     </head>
     <body>
         <header>
-            <img src="css/imagenes/logoMartin.gif" alt="Logo del Instituto I.E.S Martín Rivero"/>
+            <a href="principal.jsp"><img src="css/imagenes/logoMartin.gif"/></a>
             <div class="container-banderas">
-                <img tabindex="3" src="css/imagenes/spain_flag.jpg" alt="Cambiar idioma a Español"/>
-                <img tabindex="4" src="css/imagenes/british_flag.jpg" alt="Cambiar idioma a inglés"/>
+                <form action="contacto.jsp" method="post">
+                    <input type="hidden" name="language" value="en">
+                    <input type="image" tabindex="4" src="css/imagenes/british_flag.jpg" alt="Cambiar idioma a Inglés"/>
+                </form>
+
+                <form action="contacto.jsp" method="post">
+                    <input type="hidden" name="language" value="es">
+                    <input type="image" tabindex="3" src="css/imagenes/spain_flag.jpg" alt="Cambiar idioma a Español"/>
+                </form>
             </div>
             <h1 tabindex="1" title="Bienvenido a la Web del IES Martín Rivero">IES Martín Rivero</h1>
-            <h3 tabindex="2" title="Eslogan">Creamos tu futuro</h3>
+            <h3 tabindex="2" title="Construimos tu futuro"><fmt:message key='tagline'/></h3>
             <div class="container-botones">
-                <a title="Enlace a la página externa Aula_Virtual" href="http://www.juntadeandalucia.es/averroes/centros-tic/29007962/moodle2/">
-                    <button tabindex="5">Aula Virtual</button></a>
-                <a title="Enlace a la sección Búsqueda" href="#">
-                    <button tabindex="5"><span class="icon-search"></span>Busqueda</button>
+                <a href="http://www.juntadeandalucia.es/averroes/centros-tic/29007962/moodle2/">
+                    <button tabindex="5" title="Enlace a la página externa Aula_Virtual"><fmt:message key='btnAula'/></button>
+                </a>
+                <a href="#"><button tabindex="6" title="Enlace a la sección Búsqueda">
+                        <span class="icon-search"></span><fmt:message key='btnBusqueda'/>
+                    </button>
                 </a>
             </div>
         </header>
-        
+
+
         <div id="menu-principal">
             <div class="menu_bar">
                 <a title="Abrir Menú Desplegable" href="#" class="boton_menu" id="bars"><span class="icon-menu"></span></a>
@@ -45,30 +59,31 @@
 
             <nav>
                 <ul>
-                    <li><a tabindex="7" title="Enlace a la sección Principal" href="principal.jsp"><span class="icon-home3"></span>Inicio</a></li>
-                    <li><a tabindex="8" title="Enlace a la sección Principal" href="noticias.jsp"><span class="icon-newspaper"></span>Noticias</a></li>
+                    <li><a tabindex="7" title="Enlace a la sección Principal" href="principal.jsp"><span class="icon-home3"></span><fmt:message key='menuInicio'/></a></li>
+                    <li><a tabindex="8" title="Enlace a la sección Principal" href="noticias.jsp"><span class="icon-newspaper"></span><fmt:message key='menuNoticias'/></a></li>
                     <li class="submenu">
                         <a tabindex="9" title="Submenú de Cursos" href="#">
-                            <span class="icon-study"></span>Estudios<span class="caret icon-cheveron-down"></span>
+                            <span class="icon-study"></span><fmt:message key='menuEstudios'/><span class="caret icon-cheveron-down"></span>
                         </a>
                         <ul class="children">
-                            <li><a title="Enlace a la sección Estudios" href="estudios.jsp">Secundaria</a></li>
-                            <li><a title="Enlace a la secciónn Estudios" href="estudios.jsp">Bachillerato</a></li>
-                            <li><a title="Enlace a la sección Estudios" href="estudios.jsp">Formacion Profesional</a></li>
+                            <li><a title="Enlace a la sección Estudios" href="estudios.jsp"><fmt:message key='menuSecundaria'/></a></li>
+                            <li><a title="Enlace a la secciónn Estudios" href="estudios.jsp"><fmt:message key='menuBachillerato'/></a></li>
+                            <li><a title="Enlace a la sección Estudios" href="estudios.jsp"><fmt:message key='menuFP'/></a></li>
                         </ul>
                     </li>
                     <li class="submenu">
                         <a tabindex="10" title="Submenú de Departamentos" href="#">
-                            <span class="icon-briefcase"></span>Departamentos<span class="caret icon-cheveron-down"></span>
+                            <span class="icon-briefcase"></span><fmt:message key='menuDepartamentos'/><span class="caret icon-cheveron-down"></span>
                         </a>
                         <ul class="children">
-                            <li><a title="Enlace a la sección Departamentos" href="departamentos.jsp">Lingüistica</a></li>
-                            <li><a title="Enlace a la sección Departamentos" href="departamentos.jsp">Científico-Tecnologica</a></li>
-                            <li><a title="Enlace a la sección Departamentos" href="departamentos.jsp">Artística</a></li>
-                            <li><a title="Enlace a la sección Departamentos" href="departamentos.jsp">Familias Profesionales</a></li>
+                            <li><a title="Enlace a la sección Lingüistica" href="departamentos.jsp#cad_1"><fmt:message key='menuLinguistica'/></a></li>
+                            <li><a title="Enlace a la sección Científico-Tecnologica" href="departamentos.jsp#cad_2"><fmt:message key='menuCiencia'/></a></li>
+                            <li><a title="Enlace a la sección Artística" href="departamentos.jsp#cad_3"><fmt:message key='menuArte'/></a></li>
+                            <li><a title="Enlace a la sección Familias Profesionales" href="departamentos.jsp#cad_4"><fmt:message key='menuFamiliasPro'/></a></li>
+                            <li><a title="Enlace a la sección Otros" href="departamentos.jsp#cad_5"><fmt:message key='menuOtros'/></a></li>
                         </ul>
                     </li>
-                    <li><a tabindex="11" title="Enlace a la sección contacto" href="contacto.jsp"><span class="icon-envelop"></span>Contacto</a></li>
+                    <li><a tabindex="11" title="Enlace a la sección contacto" href="contacto.jsp"><span class="icon-envelop"></span><fmt:message key='menuContacto'/></a></li>
                 </ul>
             </nav>		
         </div>
@@ -83,29 +98,29 @@
         </section>    
         <section id="consulta">
 
-            <form id="form1">
-                <h3>ENVÍENOS UNA CONSULTA</h3>
+            <form id="form1" action="Mail" method="post">
+                <h3>ENVÍANOS UNA CONSULTA</h3>
                 <label for="name">Nombre: <span class="requerido">*</span></label><br>
-                <input tabindex="16" aria-required="true" type="text" id="name" placeholder="Introduzca su nombre" required/>
+                <input tabindex="16" type="text" id="name" name="nombre" placeholder="Introduzca su nombre" required/>
                 <br>
-                <label for="email">Dirección de correo: <span class="requerido">*</span></label><br>
-                <input tabindex="17" aria-required="true" type="email" id="email" placeholder="Introduzca su dirección de correo" required />
-                <br>   
-                <label for="asunto">Asunto: <span class="requerido">*</span></label><br>
-                <select tabindex="18" id="asunto">
-                    <option value="opcion1">Plazos de Admisión y Matrícula</option>
-                    <option value="opcion2">Actividades Extraescolares y Complemetarias</option>
-                    <option value="opcion3">Área Pasem</option>
-                    <option value="opcion3">Otros</option>
-                </select>                
+                <label for="destinatario">Destinatario: <span class="requerido">*</span></label><br>
+                <input tabindex="17" aria-required="true" type="email" id="destinatario" name="destinatario" placeholder="Introduzca su dirección de correo" required />
+                <br>  
+                <label for="asunto">Asunto <span class="requerido">*</span></label><br>
+                <input tabindex="18" aria-required="true" type="text" id="asunto" name="asunto" placeholder="Escriba aquí el asunto" required />
                 <br>             
                 <label for="mensaje">Mensaje: <span class="requerido">*</span></label><br>
-                <textarea tabindex="19" id="mensaje" placeholder="Escriba aquí su mensaje..."></textarea>
+                <textarea tabindex="19" id="mensaje" name="mensaje" placeholder="Escriba aquí un mensaje..."></textarea>
                 <br>
 
                 <input tabindex="20" type="submit" value="Enviar" id="submit-button" />
 
                 <p id="required"><span class="requerido">*</span> rellenar obligatoriamente</p>
+
+                <c:if test="${not empty resultado}">
+                    <p id="respuesta"><span><%=request.getAttribute("resultado")%></span></p>
+                        </c:if>
+
             </form>    
         </section>
 
@@ -117,17 +132,17 @@
 
         <section id="newsletter"> 
             <h1>NEWSLETTER</h1>
-            <p>¡Sucríbete a nuestro boletín!</p>
-            <p>Te enviaremos un email cada vez que publiquemos una noticia nueva.</p>
-            <form action="altaNewsletter">
-                <input tabindex="15" type="email" placeholder="Dirección de E-mail"/><span class="icon-paper-plane-o"></span><input tabindex="16" type="submit" value="Enviar"/>		
+            <p><fmt:message key='newsletter1'/></p>
+            <p><fmt:message key='newsletter2'/></p>
+            <form action="#">
+                <input type="email" placeholder="<fmt:message key='email'/>"/><input type="submit" value="Enviar"/>		
             </form>
         </section>    
         <footer>
             <div class="footer-container">
                 <div class="footer-main">
                     <div class="footer-columna">
-                        <h3>Datos del Centro</h3>
+                        <h3><fmt:message key='datosCentro'/></h3>
                         <p><span class="icon-location"></span>Calle Fernando de los Ríos, 1, 29400 Ronda</p>
                         <p><span class="icon-phone"></span>(+34)952 16 99 07</p>
                         <p><span class="icon-fax"></span>(+34)952 16 99 13</p>

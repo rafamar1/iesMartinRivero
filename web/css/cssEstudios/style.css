@@ -17,21 +17,25 @@ header{
 header h1{
     left: 35px;
     top: 10px;
-    font-size: 3.6em;
+    font-size: 5vw;
     color: #ffffff;
     position: relative;
-    width: 75%;
-}
-header h3{
-    position: relative;
-    left: 535px;
-    top: 10px;
-    font-size: 1.2em;
-    width: 60%;
-    color: #ffffff;	
+    width: 70%;
+    text-shadow: 3px 2px 9px black;
 }
 
-header > img{
+header h3{
+    position: relative;
+    left: 37%;
+    top: 8px;
+    font-size: 2.3vw;
+    width: 60%;    
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 2px 1px 9px black;
+}
+
+header a img{
     width: 140px;
     height: 170px;
     position: relative;
@@ -42,13 +46,13 @@ header > img{
     padding: 25px 5px;
 }
 
-header:before {
+header:before{
+    /*BANDA ROJA DE LA CABECERA*/
     content: " ";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    /* background-color: darkred; */
     background: linear-gradient(0deg,#760000,#470000);
     height: 8em;
     z-index: -1;
@@ -60,10 +64,21 @@ header .container-banderas{
     margin: 15px; 
 }
 
-header .container-banderas img{
+header .container-banderas form{
+    display: inline-block;
+}
+
+header .container-banderas input[type="image"]{
     width: 40px;
     height: 25px;	
     margin: 0px 5px;
+}
+
+header .container-banderas input:hover{
+    transform: scale(1.15);
+    transition-property: transform;
+    transition-duration: 0.2s;
+    box-shadow: 1px 1px 8px #000;
 }
 
 header .container-botones{
@@ -71,17 +86,22 @@ header .container-botones{
     clear: both;
 }
 
-header button {
+header .container-botones button {
     padding: 10px;
-    background-color: darkred;
+    background: darkred;
     border: 2px solid black;
     border-radius: 5px;
     min-width: 120px;
     width: 12%;
     margin: 0px 10px;
-    /*display: inline-flex;
-    margin: 15px auto;*/
+    font-family: 'Quicksand', sans-serif;
 }
+
+header .container-botones a:hover button {
+    background: linear-gradient(180deg,#790000,#3e0000);
+    border: 2px solid #8f0000;
+}
+
 header .container-botones button span{
     margin-right: 10px;
 }
@@ -110,8 +130,10 @@ header .container-botones a button  {
 }
 
 #menu-principal{
-    width: 100%;
+    width: 100%;    
+    font-family: 'Quicksand', sans-serif;
 }
+
 #menu-principal nav{
     width: 90%;
     max-width: 1000px;
@@ -122,12 +144,12 @@ header .container-botones a button  {
     z-index: 1000;/*Para situarlo por encima del texto siemre*/
 }
 
-
 #menu-principal nav ul{
     /*overflow: hidden;/*Para que el texto no se pongadetras del menu*/
     list-style: none;
     text-transform: uppercase;
 }
+
 #menu-principal nav ul li{
     display: inline-block;
     position: relative;
@@ -142,8 +164,6 @@ header .container-botones a button  {
 }
 
 #menu-principal nav ul li .caret{
-    /*position: relative;
-    top: 3px;*/
     margin-left: 10px;
     margin-top: 0px;
 }
@@ -152,16 +172,16 @@ header .container-botones a button  {
 }
 
 #menu-principal nav ul li a:hover,#menu-principal nav ul li a:active{
-    background-color: #209035;
+    background: #71eb71;
+    color:#000;
 }
 
 #menu-principal nav ul li .children {
     display: none;
     position: absolute;
     z-index: 1000;
-
     background-color: #59C470;
-    width: 100%;/*Sobredimensionamos*/
+    width: 100%;
 }
 
 #menu-principal nav ul li:hover .children {
@@ -180,89 +200,18 @@ header .container-botones a button  {
     font-weight: normal;
 }
 
-/********-------------------SECCION BIENVENIDA-----------------***********/
-#bienvenida{
-    width: 80%;
-    background: lightgreen;
-    color: #000;
-    padding: 15px;
-    padding-left: 20%;
-    font-size: 1.2em;
-    margin: 50px 0px;
-    box-shadow: 4px 3px 15px #006400bf;
-}
-
-.welcome-short{
-    display: none;
-}
-
-
-.container-slider{
-    width: 50%;
-    position: relative;
-    margin: 25px auto;
-}
-
-#noticias {
-    display: flex;
-    flex-wrap: wrap;	
-
-}
-#noticias h1{
-    flex: 100%;
-    border-bottom: 2px solid lightgreen;
-    margin-bottom: 15px;
-}
-#noticias article {
-    flex: 1;
-    margin: 10px;
-    padding: 20px;
-    border: 2px solid darkred;
-    -webkit-box-shadow: 1px 1px 10px darkgrey;
-    box-shadow: 1px 1px 10px darkgrey;		
-}
-#noticias article:nth-child(odd){
-    background-color: lightgreen;
-    border: 1px solid lightgreen;
-}
-#noticias article img {
-    width: 100%;
-}
-
-#noticias article h3, #noticias article p {
-    margin: 15px 5px;
-    text-align: justify;
-}
-
-#noticias article a{
-    float: right;
-}
-
-#noticias article a:hover{
-    color: blue;
-}
-
-section{
-    padding: 20px;
-    margin: 20px 0px;
-}
-
-
 /*----------------------CUERPO---------------------*/
 
-body > h1{
+#bachillerato h1{
     flex: 100%;
-    border-bottom: 2px solid lightgreen;
-    font-size:1.5em;
-    margin: 0 15px 15px 15px;
+    border-bottom: 2px solid #5e0000;
+    margin:0 0 5% 0;
+    font-size: 2.5em;
+    color: #5e0000;
+    text-shadow: 0px 0px 1px #320101;
 }
 
-.Bach{
-    padding:0;
-    margin: 5% 3% 20% 3%;
-}
-
-.Bach > header > h3{
+#bachillerato > h3{
     top:0;
     left:0;
     margin: 0;
@@ -274,62 +223,80 @@ body > h1{
     clear:both;
     width:100%;
     font-size:2em;
+    font-family: 'Mina', sans-serif;
 }
 
-.Bach header > h3{
-    border-radius: 20px;
-    box-shadow: inset 0 0 5px 5px #292929; 
-    border:1px solid black;
+.bach article{
+    margin-bottom: 10%;
 }
 
-.Primero .ciencias section:nth-child(2), .Segundo .sociales section:nth-child(2){
+/*colores de cada bachillerato (primero y segundo)*/
+.bach article:nth-of-type(1), .bach article:nth-of-type(7){
     background-color:darkred;
     color:white;
 }
-.Primero .ciencias section:nth-child(3), .Segundo .sociales section:nth-child(3){
+.bach article:nth-of-type(2), .bach article:nth-of-type(8){
     background-color:#59C470;
     color:black;
 }
-.Primero .sociales section:nth-child(2), .Segundo .ciencias section:nth-child(2){
+.bach article:nth-of-type(3), .bach article:nth-of-type(5){
     background-color:darkgreen;
     color:white;
 }
-.Primero .sociales section:nth-child(3), .Segundo .ciencias section:nth-child(3){
+.bach article:nth-of-type(4), .bach article:nth-of-type(6){
     background-color: white;
     color:black;
 }
 
-
-.Segundo{
-    clear: both;
-    padding-top: 5%;
+/*Ponemos todos los enlaces en blanco*/
+#bachillerato a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+/*Y ahora cambiamos los que nos interesan a negro*/
+#bachillerato article:nth-of-type(2) a,#bachillerato article:nth-of-type(8) a,
+#bachillerato article:nth-of-type(4) a,#bachillerato article:nth-of-type(6) a{
+    color: black;
 }
 
-.allDepart{
-    border-radius: 20px;
-    box-shadow: inset 0 0 15px 10px #292929; 
+.bach{
+    padding:0;
+    margin: 5% 3% 20% 3%;
 }
 
-.allDepart div p{
+.bach > h3{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: inset 0 0 5px 5px #292929; 
+    border:1px solid black;
+}
+
+.curso{
+    border-bottom-left-radius: 20px;   
+    border-bottom-right-radius: 20px;   
+    box-shadow: inset 10px 10px 80px 0px black; 
+}
+
+.curso div p{
     margin: 5% 5% 0 5%;		
 }
 
-.allDepart header{
+.curso header{
     margin-top:10%;
     margin-bottom:20%;
     text-align:center;
 }
 
-.allDepart header span{
+.curso header span{
     font-size:2.6em;
 }
 
-.allDepart div p:last-child {
+.curso div{
     margin-bottom:20%;
 }
 
-
-.allDepart input[type=submit]{
+/*.curso input[type=submit]{
     float: right;
     padding: 1em;
     margin: 0 10% 10% 0;
@@ -340,39 +307,46 @@ body > h1{
     box-shadow: 4px 3px 15px black;
 }
 
-.allDepart input[type=submit]:hover{
-     background: #3a7999;
-     color: white;
+.curso input[type=submit]:hover{
+    background: #3a7999;
+    color: white;
+}*/
+
+.curso input[type="image"]{
+    float: right;
+    width: 55px;
+    margin: 15px;
 }
 
+.curso input[type="image"]:hover{
+    transform: scale(1.1);
+    transition-duration: 1s;
+    transition-property: transform;
+}
 
+.curso:hover{
+    box-shadow: inset 20px 10px 80px 0px black; 
+    /*text-shadow: 2px 1px 9px black;*/
+}
 
+.bach a:hover{
+    font-size: 1.4em;
+    text-decoration: underline;
+}
 
+/*media query común para web y tablet*/
 @media (min-width: 768px) { 
 
-    .Bach > article header h3{	
-        top:0;
-        left:0;
-        margin: 0;		
-        padding: 0;
-        color:black;
-        background-color:#CCC;
-        text-align:center;
-        padding: 20px 0 20px 0;
-        width:100%;
+    .curso {
+        float:left;
+        width:25%;
     }
 
-    .ciencias , .sociales{
-        float:left;
-        width:50%;
+    .bach > article header h2{	
+        font-size: 1.5em;
+        padding: 5%;
     }
 
-    .ciencias section, .sociales section{
-        float:left;
-        margin:0;
-        padding:0;	
-        width:50%;
-    }
 }
 /*----------------------FOOTER----------------------*/
 
@@ -413,7 +387,6 @@ footer{
     font-size: 32px;
     color: lightgreen;
     margin-bottom: 20px;
-    font-family: 'Abel', sans-serif;
 }
 
 .footer-main .footer-columna p{
@@ -460,6 +433,10 @@ and (orientation: portrait){
     #menu-principal{
         height: 55px;/*Para posicionamiento de botones e introducion*/
     }
+
+    #menu-principal nav ul li{
+        background: linear-gradient(0deg,#660000,#2c0000);
+    }
     header h1{
         color: #000000;
         top: 80px;
@@ -485,10 +462,7 @@ and (orientation: portrait){
         position: relative;
         top: -150px;
         z-index: 100;/*PARA QUE PASE POR ENCIMA DEL SLIDE*/
-        /*width: 100%;*/
-        /*background-color: #DD8B8B;*/
-        /* position: fixed; */
-        /* top: 0; */
+        
     }
     .menu_bar .boton_menu{
         display: block;
@@ -538,85 +512,80 @@ and (orientation: portrait){
     #menu-principal nav ul li .caret {
         float: right;
     }
-
-    /**********************----------------------ESTILO PARA MOVIL-------------**************/
-    @media only screen
-    and (min-width:360px)
-    and (max-width:480px) 
-    and (orientation: portrait){
-
-        /*Titulos*/
-        body header > h1{
-            display: none;
-        }
-        body header > h3{/*Con body delante para que tenga mas especificidad*/
-            position: relative;
-            color: white;
-            top: 0px;
-            left: 40px;
-            color: #ffffff;
-            font-size: 1.3em;
-            width: auto; 
-        }
-
-        /*Reposicionamiento de las banderas*/
-        .container-banderas{
-            position: absolute;
-            top: 85px;
-            right: 90px;
-        }
-
-
-
-        /*********-----------------CUERPO MOVIL--------------***************/
-
-
-        .Bach > article header h3{	
-            top:0;
-            left:0;
-            margin: 0;
-            padding: 0;
-            color:black;	
-            background-color:#CCC;
-            text-align:center;
-            padding: 20px 0 20px 0;
-            clear:both;
-        }
-
-        .ciencias section, .sociales section{
-            width:50%;
-            float:left;		
-            margin:0;
-        }
-
-        .sociales{
-            clear: both;
-            padding-top: 5%;
-        }
-
-        /*********-----------------FOOTER MOVIL--------------***************/
-        .footer-main {
-            padding: 10px 0;
-        }
-
-        .footer-main .footer-columna{
-            text-align: center;
-            width: 100%;
-            margin:10px 0;
-        }
-
-        .footer-main .footer-columna h3{
-            margin-bottom: 5px;
-        }
-
-        .footer-main .footer-columna:nth-child(2) img{
-            top: 0px;
-        }
-
-        .footer-main .footer-columna:nth-child(3) img{
-            top: 0px;
-            width: 7em;
-        }
-
+    
+    /*********-----------------FOOTER TABLET--------------***************/
+    .footer-main {
+        padding: 10px 0;
     }
+
+    .footer-main .footer-columna{
+        text-align: center;
+        width: 100%;
+        margin:10px 0;
+    }
+
+    .footer-main .footer-columna h3{
+        margin-bottom: 5px;
+    }
+
+    .footer-main .footer-columna:nth-child(2) img{
+        top: 0px;
+    }
+
+    .footer-main .footer-columna:nth-child(3) img{
+        top: 0px;
+        width: 7em;
+    }
+
+}
+
+/**********************----------------------ESTILO PARA MOVIL-------------**************/
+@media only screen
+and (min-width:360px)
+and (max-width:480px) 
+and (orientation: portrait){
+
+    /*Titulos*/
+    body header > h1{
+        display: none;
+    }
+    body header > h3{/*Con body delante para que tenga mas especificidad*/
+        position: relative;
+        color: white;
+        top: 0px;
+        left: 40px;
+        color: #ffffff;
+        font-size: 1.3em;
+        width: auto; 
+    }
+
+    /*Reposicionamiento de las banderas*/
+    .container-banderas{
+        position: absolute;
+        top: 85px;
+        right: 90px;
+    }
+
+    #menu-principal nav ul li{
+        background: linear-gradient(0deg,#660000,#2c0000);
+    }
+
+    /*********-----------------CUERPO MOVIL--------------***************/
+
+    .bach > article header h2{	
+        font-size: 1.5em;
+        padding: 5%;
+    }
+
+    .curso{
+        width:50%;
+        float:left;		
+        margin:0;
+    }
+
+    .curso{
+        text-align: center;
+        font-size: 1em;
+    }
+
 }

@@ -40,19 +40,25 @@
             <div class="container-banderas">
                 <form action="principal.jsp" method="post">
                     <input type="hidden" name="language" value="en">
-                    <input type="image" src="css/imagenes/british_flag.jpg"/>
+                    <input type="image" tabindex="4" src="css/imagenes/british_flag.jpg" alt="Cambiar idioma a Inglés"/>
                 </form>
 
                 <form action="principal.jsp" method="post">
                     <input type="hidden" name="language" value="es">
-                    <input type="image" src="css/imagenes/spain_flag.jpg"/>
+                    <input type="image" tabindex="3" src="css/imagenes/spain_flag.jpg" alt="Cambiar idioma a Español"/>
                 </form>
             </div>
-            <h1>IES Martín Rivero</h1>
-            <h3><fmt:message key='tagline'/></h3>
+            <h1 tabindex="1" title="Bienvenido a la Web del IES Martín Rivero">IES Martín Rivero</h1>
+            <h3 tabindex="2" title="Construimos tu futuro"><fmt:message key='tagline'/></h3>
             <div class="container-botones">
-                <a href="http://www.juntadeandalucia.es/averroes/centros-tic/29007962/moodle2/"><button><fmt:message key='btnAula'/></button></a>
-                <a href="#"><button><span class="icon-search"></span><fmt:message key='btnBusqueda'/></button></a>
+                <a href="http://www.juntadeandalucia.es/averroes/centros-tic/29007962/moodle2/">
+                    <button tabindex="5" title="Enlace a la página externa Aula_Virtual"><fmt:message key='btnAula'/></button>
+                </a>
+                <a href="#">
+                    <button tabindex="6" title="Enlace a la sección Búsqueda">
+                        <span class="icon-search"></span><fmt:message key='btnBusqueda'/>
+                    </button>
+                </a>
             </div>
         </header>
 

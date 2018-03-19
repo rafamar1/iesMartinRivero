@@ -608,6 +608,30 @@ and (orientation: portrait){
     #menu-principal nav ul li .caret {
         float: right;
     }
+    
+    /*********-----------------FOOTER TABLET--------------***************/
+    .footer-main {
+        padding: 10px 0;
+    }
+
+    .footer-main .footer-columna{
+        text-align: center;
+        width: 100%;
+        margin:10px 0;
+    }
+
+    .footer-main .footer-columna h3{
+        margin-bottom: 5px;
+    }
+
+    .footer-main .footer-columna:nth-child(2) img{
+        top: 0px;
+    }
+
+    .footer-main .footer-columna:nth-child(3) img{
+        top: 0px;
+        width: 7em;
+    }
 }
 
 
@@ -663,29 +687,4 @@ and (orientation: portrait){
     section {
         padding: 0;
     }
-
-    /*********-----------------FOOTER MOVIL--------------***************/
-    .footer-main {
-        padding: 10px 0;
-    }
-
-    .footer-main .footer-columna{
-        text-align: center;
-        width: 100%;
-        margin:10px 0;
-    }
-
-    .footer-main .footer-columna h3{
-        margin-bottom: 5px;
-    }
-
-    .footer-main .footer-columna:nth-child(2) img{
-        top: 0px;
-    }
-
-    .footer-main .footer-columna:nth-child(3) img{
-        top: 0px;
-        width: 7em;
-    }
-
 }

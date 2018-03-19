@@ -32,6 +32,22 @@
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Pdf</servlet-name>
+        <url-pattern>/Pdf</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Pdf</servlet-name>
+        <servlet-class>server.Pdf</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Mail</servlet-name>
+        <url-pattern>/Mail</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Mail</servlet-name>
+        <servlet-class>server.Mail</servlet-class>
+    </servlet>
     <session-config>
         <session-timeout>
             30

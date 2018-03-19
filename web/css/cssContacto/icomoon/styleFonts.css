@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?kfkvcc');
-  src:  url('fonts/icomoon.eot?kfkvcc#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?kfkvcc') format('truetype'),
-    url('fonts/icomoon.woff?kfkvcc') format('woff'),
-    url('fonts/icomoon.svg?kfkvcc#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?yq2f0');
+  src:  url('fonts/icomoon.eot?yq2f0#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?yq2f0') format('truetype'),
+    url('fonts/icomoon.woff?yq2f0') format('woff'),
+    url('fonts/icomoon.svg?yq2f0#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,17 +24,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-factory:before {
-  content: "\e909";
-}
-.icon-globe:before {
-  content: "\e90a";
-}
 .icon-cheveron-down:before {
   content: "\e903";
 }
-.icon-lab:before {
-  content: "\e9aa";
+.icon-paper-plane-o:before {
+  content: "\e907";
+}
+.icon-send-o:before {
+  content: "\e907";
+}
+.icon-paper-plane:before {
+  content: "\e908";
+}
+.icon-send:before {
+  content: "\e908";
+}
+.icon-chevron-right:before {
+  content: "\e905";
+}
+.icon-chevron-left:before {
+  content: "\e906";
+}
+.icon-fax:before {
+  content: "\e901";
+}
+.icon-study:before {
+  content: "\e900";
+}
+.icon-graduation:before {
+  content: "\e900";
+}
+.icon-hat:before {
+  content: "\e900";
+}
+.icon-college:before {
+  content: "\e900";
 }
 .icon-home3:before {
   content: "\e902";
@@ -98,43 +122,4 @@
 }
 .icon-file-pdf:before {
   content: "\eadf";
-}
-.icon-paper-plane-o:before {
-  content: "\e907";
-}
-.icon-send-o:before {
-  content: "\e907";
-}
-.icon-paper-plane:before {
-  content: "\e908";
-}
-.icon-send:before {
-  content: "\e908";
-}
-.icon-chevron-right:before {
-  content: "\e905";
-}
-.icon-chevron-left:before {
-  content: "\e906";
-}
-.icon-fax:before {
-  content: "\e901";
-}
-.icon-study:before {
-  content: "\e900";
-}
-.icon-graduation:before {
-  content: "\e900";
-}
-.icon-hat:before {
-  content: "\e900";
-}
-.icon-paint-brush:before {
-  content: "\e900";
-}
-.icon-college:before {
-  content: "\e900";
-}
-.icon-brush:before {
-  content: "\e900";
 }
